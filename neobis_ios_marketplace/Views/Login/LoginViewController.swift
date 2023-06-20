@@ -30,28 +30,30 @@ class LoginViewController: UIViewController {
         mainView.registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         mainView.enterButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
         
-//        loginViewModel.loginResult = { [weak self] result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let data):
-//                    // Handle successful login and pass the data to the next view controller
-//                    self?.handleSuccessfulLogin(data)
-//                case .failure(let error):
-//                    // Handle login failure
-//                    self?.handleLoginFailure(error)
-//                }
-//            }
-//        }
+        loginViewModel.loginResult = { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    self?.handleSuccessfulLogin(data)
+                case .failure(let error):
+                    self?.handleLoginFailure(error)
+                }
+            }
+        }
     }
     
     @objc func enterButtonPressed() {
         
-        guard let name = mainView.nameField.text, let password = mainView.passwordField.text else {
-            print("Email or password is empty.")
-            return
+        if mainView.enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
+            
+            guard let name = mainView.nameField.text, let password = mainView.passwordField.text else {
+                print("Email or password is empty.")
+                return
+            }
+            
+            loginViewModel.login(username: name, password: password)
+            
         }
-        
-        loginViewModel.login(username: name, password: password)
     }
     
     func handleSuccessfulLogin(_ data: Data) {
@@ -68,9 +70,12 @@ class LoginViewController: UIViewController {
     }
     
     func handleLoginFailure(_ error: Error) {
+        mainView.statusLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.mainView.statusLabel.isHidden = true
+        }
         print("Login failed with error: \(error)")
     }
-
 
     @objc func registerButtonPressed() {
         let vc = RegistrationViewController()

@@ -202,13 +202,7 @@ class LoginView: UIView, UITextFieldDelegate{
     
     @objc func enterButtonPressed() {
         
-        if enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
-            statusLabel.isHidden = false
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.statusLabel.isHidden = true
-            }
-        }
+        
         
     }
     
