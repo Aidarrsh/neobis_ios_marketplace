@@ -9,21 +9,112 @@
 /* Begin PBXBuildFile section */
 		1C0EA82F2A38AF1300E06092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA82E2A38AF1300E06092 /* AppDelegate.swift */; };
 		1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8302A38AF1300E06092 /* SceneDelegate.swift */; };
-		1C0EA8332A38AF1300E06092 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8322A38AF1300E06092 /* ViewController.swift */; };
-		1C0EA8362A38AF1300E06092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8342A38AF1300E06092 /* Main.storyboard */; };
+		1C0EA8332A38AF1300E06092 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8322A38AF1300E06092 /* LoginViewController.swift */; };
 		1C0EA8382A38AF1400E06092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8372A38AF1400E06092 /* Assets.xcassets */; };
 		1C0EA83B2A38AF1400E06092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8392A38AF1400E06092 /* LaunchScreen.storyboard */; };
+		1C0EA8472A38AFB500E06092 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1C0EA8462A38AFB500E06092 /* SnapKit */; };
+		1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8482A38AFCD00E06092 /* LoginView.swift */; };
+		1C0EA85B2A38B3EC00E06092 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA84B2A38B3EC00E06092 /* Nunito-ExtraBold.ttf */; };
+		1C0EA85C2A38B3EC00E06092 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA84C2A38B3EC00E06092 /* Nunito-Medium.ttf */; };
+		1C0EA85D2A38B3EC00E06092 /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA84D2A38B3EC00E06092 /* Nunito-SemiBoldItalic.ttf */; };
+		1C0EA85E2A38B3EC00E06092 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA84E2A38B3EC00E06092 /* Nunito-Light.ttf */; };
+		1C0EA85F2A38B3EC00E06092 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA84F2A38B3EC00E06092 /* Nunito-LightItalic.ttf */; };
+		1C0EA8602A38B3EC00E06092 /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8502A38B3EC00E06092 /* Nunito-ExtraLightItalic.ttf */; };
+		1C0EA8612A38B3EC00E06092 /* Nunito-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8512A38B3EC00E06092 /* Nunito-MediumItalic.ttf */; };
+		1C0EA8622A38B3EC00E06092 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8522A38B3EC00E06092 /* Nunito-ExtraBoldItalic.ttf */; };
+		1C0EA8632A38B3EC00E06092 /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8532A38B3EC00E06092 /* Nunito-BlackItalic.ttf */; };
+		1C0EA8642A38B3EC00E06092 /* Nunito-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8542A38B3EC00E06092 /* Nunito-BoldItalic.ttf */; };
+		1C0EA8652A38B3EC00E06092 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8552A38B3EC00E06092 /* Nunito-Italic.ttf */; };
+		1C0EA8662A38B3EC00E06092 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8562A38B3EC00E06092 /* Nunito-Black.ttf */; };
+		1C0EA8672A38B3EC00E06092 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8572A38B3EC00E06092 /* Nunito-Bold.ttf */; };
+		1C0EA8682A38B3EC00E06092 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8582A38B3EC00E06092 /* Nunito-ExtraLight.ttf */; };
+		1C0EA8692A38B3EC00E06092 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8592A38B3EC00E06092 /* Nunito-SemiBold.ttf */; };
+		1C0EA86A2A38B3EC00E06092 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA85A2A38B3EC00E06092 /* Nunito-Regular.ttf */; };
+		1C0EA86D2A38C96200E06092 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA86C2A38C96200E06092 /* CustomTextField.swift */; };
+		1C0EA8A82A38D6B000E06092 /* GothamProNarrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89C2A38D6B000E06092 /* GothamProNarrow-Bold.ttf */; };
+		1C0EA8A92A38D6B000E06092 /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89D2A38D6B000E06092 /* GothamPro-Medium.ttf */; };
+		1C0EA8AA2A38D6B000E06092 /* GothamPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89E2A38D6B000E06092 /* GothamPro-LightItalic.ttf */; };
+		1C0EA8AB2A38D6B000E06092 /* GothamPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89F2A38D6B000E06092 /* GothamPro-Light.ttf */; };
+		1C0EA8AC2A38D6B000E06092 /* GothamProNarrow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A02A38D6B000E06092 /* GothamProNarrow-Medium.ttf */; };
+		1C0EA8AD2A38D6B000E06092 /* GothamPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A12A38D6B000E06092 /* GothamPro-Bold.ttf */; };
+		1C0EA8AE2A38D6B000E06092 /* GothamPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A22A38D6B000E06092 /* GothamPro-Black.ttf */; };
+		1C0EA8AF2A38D6B000E06092 /* GothamPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A32A38D6B000E06092 /* GothamPro-BoldItalic.ttf */; };
+		1C0EA8B02A38D6B000E06092 /* GothamPro-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A42A38D6B000E06092 /* GothamPro-MediumItalic.ttf */; };
+		1C0EA8B12A38D6B000E06092 /* GothamPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A52A38D6B000E06092 /* GothamPro-Italic.ttf */; };
+		1C0EA8B22A38D6B000E06092 /* GothamPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A62A38D6B000E06092 /* GothamPro-BlackItalic.ttf */; };
+		1C0EA8B32A38D6B000E06092 /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8A72A38D6B000E06092 /* GothamPro.ttf */; };
+		1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8B52A3AFD9400E06092 /* RegistrationViewController.swift */; };
+		1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */; };
+		1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */; };
+		1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */; };
+		1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */; };
+		1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650012A3EECC800A36DF4 /* ProfileView.swift */; };
+		1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */; };
+		1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650052A40446900A36DF4 /* CustomTabBar.swift */; };
+		1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650082A405F6700A36DF4 /* SpashViewController.swift */; };
+		1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66500B2A40643000A36DF4 /* FinishRegViewController.swift */; };
+		1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66500D2A40643A00A36DF4 /* FinishRegView.swift */; };
+		1C6650112A419A0700A36DF4 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650102A419A0700A36DF4 /* NumberViewController.swift */; };
+		1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650122A419A4C00A36DF4 /* NumberView.swift */; };
+		1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44D92A41ACDC00E3EBEA /* Models.swift */; };
+		1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DC2A41AEC500E3EBEA /* Service.swift */; };
+		1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C0EA82B2A38AF1300E06092 /* neobis_ios_marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neobis_ios_marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0EA82E2A38AF1300E06092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C0EA8302A38AF1300E06092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C0EA8322A38AF1300E06092 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1C0EA8352A38AF1300E06092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C0EA8322A38AF1300E06092 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C0EA8372A38AF1400E06092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0EA83A2A38AF1400E06092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0EA83C2A38AF1400E06092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C0EA8482A38AFCD00E06092 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1C0EA84B2A38B3EC00E06092 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1C0EA84C2A38B3EC00E06092 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		1C0EA84D2A38B3EC00E06092 /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA84E2A38B3EC00E06092 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		1C0EA84F2A38B3EC00E06092 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8502A38B3EC00E06092 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8512A38B3EC00E06092 /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8522A38B3EC00E06092 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8532A38B3EC00E06092 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8542A38B3EC00E06092 /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8552A38B3EC00E06092 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		1C0EA8562A38B3EC00E06092 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		1C0EA8572A38B3EC00E06092 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		1C0EA8582A38B3EC00E06092 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		1C0EA8592A38B3EC00E06092 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		1C0EA85A2A38B3EC00E06092 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		1C0EA86C2A38C96200E06092 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		1C0EA89C2A38D6B000E06092 /* GothamProNarrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamProNarrow-Bold.ttf"; path = "../../../../../../Downloads/GothamPro/GothamProNarrow-Bold.ttf"; sourceTree = "<group>"; };
+		1C0EA89D2A38D6B000E06092 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Medium.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
+		1C0EA89E2A38D6B000E06092 /* GothamPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-LightItalic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA89F2A38D6B000E06092 /* GothamPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Light.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Light.ttf"; sourceTree = "<group>"; };
+		1C0EA8A02A38D6B000E06092 /* GothamProNarrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamProNarrow-Medium.ttf"; path = "../../../../../../Downloads/GothamPro/GothamProNarrow-Medium.ttf"; sourceTree = "<group>"; };
+		1C0EA8A12A38D6B000E06092 /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Bold.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Bold.ttf"; sourceTree = "<group>"; };
+		1C0EA8A22A38D6B000E06092 /* GothamPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Black.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Black.ttf"; sourceTree = "<group>"; };
+		1C0EA8A32A38D6B000E06092 /* GothamPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-BoldItalic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8A42A38D6B000E06092 /* GothamPro-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-MediumItalic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8A52A38D6B000E06092 /* GothamPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Italic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Italic.ttf"; sourceTree = "<group>"; };
+		1C0EA8A62A38D6B000E06092 /* GothamPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-BlackItalic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		1C0EA8A72A38D6B000E06092 /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GothamPro.ttf; path = ../../../../../../Downloads/GothamPro/GothamPro.ttf; sourceTree = "<group>"; };
+		1C0EA8B52A3AFD9400E06092 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1C6650012A3EECC800A36DF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		1C6650052A40446900A36DF4 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		1C6650082A405F6700A36DF4 /* SpashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashViewController.swift; sourceTree = "<group>"; };
+		1C66500B2A40643000A36DF4 /* FinishRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegViewController.swift; sourceTree = "<group>"; };
+		1C66500D2A40643A00A36DF4 /* FinishRegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegView.swift; sourceTree = "<group>"; };
+		1C6650102A419A0700A36DF4 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		1C6650122A419A4C00A36DF4 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		1CAF44D92A41ACDC00E3EBEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1CAF44DC2A41AEC500E3EBEA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0EA8472A38AFB500E06092 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +148,172 @@
 		1C0EA82D2A38AF1300E06092 /* neobis_ios_marketplace */ = {
 			isa = PBXGroup;
 			children = (
+				1C0EA8422A38AF7200E06092 /* Views */,
 				1C0EA82E2A38AF1300E06092 /* AppDelegate.swift */,
 				1C0EA8302A38AF1300E06092 /* SceneDelegate.swift */,
-				1C0EA8322A38AF1300E06092 /* ViewController.swift */,
-				1C0EA8342A38AF1300E06092 /* Main.storyboard */,
 				1C0EA8372A38AF1400E06092 /* Assets.xcassets */,
 				1C0EA8392A38AF1400E06092 /* LaunchScreen.storyboard */,
 				1C0EA83C2A38AF1400E06092 /* Info.plist */,
 			);
 			path = neobis_ios_marketplace;
+			sourceTree = "<group>";
+		};
+		1C0EA8422A38AF7200E06092 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8432A38AF7D00E06092 /* SplashScreen */,
+				1C0EA8442A38AF9200E06092 /* Login */,
+				1C0EA8B42A3AFD2200E06092 /* Registration */,
+				1C0EA8B92A3B062E00E06092 /* Password */,
+				1C664FFD2A3EEC9E00A36DF4 /* Profile */,
+				1C66500A2A40641800A36DF4 /* FinishRegistration */,
+				1C66500F2A4199C700A36DF4 /* AddNumber */,
+				1CAF44DE2A41AF6400E3EBEA /* ViewModels */,
+				1CAF44D82A41ACCF00E3EBEA /* Models */,
+				1CAF44DB2A41AEB500E3EBEA /* Service */,
+				1C6650072A4058AF00A36DF4 /* CustomTabBar */,
+				1C0EA86B2A38C95500E06092 /* CustomTextField */,
+				1C0EA84A2A38B38D00E06092 /* Fonts */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C0EA8432A38AF7D00E06092 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1C6650082A405F6700A36DF4 /* SpashViewController.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		1C0EA8442A38AF9200E06092 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8322A38AF1300E06092 /* LoginViewController.swift */,
+				1C0EA8482A38AFCD00E06092 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1C0EA84A2A38B38D00E06092 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8A22A38D6B000E06092 /* GothamPro-Black.ttf */,
+				1C0EA8A62A38D6B000E06092 /* GothamPro-BlackItalic.ttf */,
+				1C0EA8A12A38D6B000E06092 /* GothamPro-Bold.ttf */,
+				1C0EA8A32A38D6B000E06092 /* GothamPro-BoldItalic.ttf */,
+				1C0EA8A52A38D6B000E06092 /* GothamPro-Italic.ttf */,
+				1C0EA89F2A38D6B000E06092 /* GothamPro-Light.ttf */,
+				1C0EA89E2A38D6B000E06092 /* GothamPro-LightItalic.ttf */,
+				1C0EA89D2A38D6B000E06092 /* GothamPro-Medium.ttf */,
+				1C0EA8A42A38D6B000E06092 /* GothamPro-MediumItalic.ttf */,
+				1C0EA8A72A38D6B000E06092 /* GothamPro.ttf */,
+				1C0EA89C2A38D6B000E06092 /* GothamProNarrow-Bold.ttf */,
+				1C0EA8A02A38D6B000E06092 /* GothamProNarrow-Medium.ttf */,
+				1C0EA8562A38B3EC00E06092 /* Nunito-Black.ttf */,
+				1C0EA8532A38B3EC00E06092 /* Nunito-BlackItalic.ttf */,
+				1C0EA8572A38B3EC00E06092 /* Nunito-Bold.ttf */,
+				1C0EA8542A38B3EC00E06092 /* Nunito-BoldItalic.ttf */,
+				1C0EA84B2A38B3EC00E06092 /* Nunito-ExtraBold.ttf */,
+				1C0EA8522A38B3EC00E06092 /* Nunito-ExtraBoldItalic.ttf */,
+				1C0EA8582A38B3EC00E06092 /* Nunito-ExtraLight.ttf */,
+				1C0EA8502A38B3EC00E06092 /* Nunito-ExtraLightItalic.ttf */,
+				1C0EA8552A38B3EC00E06092 /* Nunito-Italic.ttf */,
+				1C0EA84E2A38B3EC00E06092 /* Nunito-Light.ttf */,
+				1C0EA84F2A38B3EC00E06092 /* Nunito-LightItalic.ttf */,
+				1C0EA84C2A38B3EC00E06092 /* Nunito-Medium.ttf */,
+				1C0EA8512A38B3EC00E06092 /* Nunito-MediumItalic.ttf */,
+				1C0EA85A2A38B3EC00E06092 /* Nunito-Regular.ttf */,
+				1C0EA8592A38B3EC00E06092 /* Nunito-SemiBold.ttf */,
+				1C0EA84D2A38B3EC00E06092 /* Nunito-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1C0EA86B2A38C95500E06092 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA86C2A38C96200E06092 /* CustomTextField.swift */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		1C0EA8B42A3AFD2200E06092 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8B52A3AFD9400E06092 /* RegistrationViewController.swift */,
+				1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		1C0EA8B92A3B062E00E06092 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */,
+				1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		1C664FFD2A3EEC9E00A36DF4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */,
+				1C6650012A3EECC800A36DF4 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1C6650072A4058AF00A36DF4 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */,
+				1C6650052A40446900A36DF4 /* CustomTabBar.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		1C66500A2A40641800A36DF4 /* FinishRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				1C66500B2A40643000A36DF4 /* FinishRegViewController.swift */,
+				1C66500D2A40643A00A36DF4 /* FinishRegView.swift */,
+			);
+			path = FinishRegistration;
+			sourceTree = "<group>";
+		};
+		1C66500F2A4199C700A36DF4 /* AddNumber */ = {
+			isa = PBXGroup;
+			children = (
+				1C6650102A419A0700A36DF4 /* NumberViewController.swift */,
+				1C6650122A419A4C00A36DF4 /* NumberView.swift */,
+			);
+			path = AddNumber;
+			sourceTree = "<group>";
+		};
+		1CAF44D82A41ACCF00E3EBEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CAF44D92A41ACDC00E3EBEA /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1CAF44DB2A41AEB500E3EBEA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1CAF44DC2A41AEC500E3EBEA /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1CAF44DE2A41AF6400E3EBEA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +332,9 @@
 			dependencies = (
 			);
 			name = neobis_ios_marketplace;
+			packageProductDependencies = (
+				1C0EA8462A38AFB500E06092 /* SnapKit */,
+			);
 			productName = neobis_ios_marketplace;
 			productReference = 1C0EA82B2A38AF1300E06092 /* neobis_ios_marketplace.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 1C0EA8222A38AF1300E06092;
+			packageReferences = (
+				1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */,
+			);
 			productRefGroup = 1C0EA82C2A38AF1300E06092 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +380,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0EA85C2A38B3EC00E06092 /* Nunito-Medium.ttf in Resources */,
+				1C0EA8B02A38D6B000E06092 /* GothamPro-MediumItalic.ttf in Resources */,
+				1C0EA8672A38B3EC00E06092 /* Nunito-Bold.ttf in Resources */,
+				1C0EA8662A38B3EC00E06092 /* Nunito-Black.ttf in Resources */,
+				1C0EA8692A38B3EC00E06092 /* Nunito-SemiBold.ttf in Resources */,
+				1C0EA8622A38B3EC00E06092 /* Nunito-ExtraBoldItalic.ttf in Resources */,
+				1C0EA8AD2A38D6B000E06092 /* GothamPro-Bold.ttf in Resources */,
+				1C0EA85B2A38B3EC00E06092 /* Nunito-ExtraBold.ttf in Resources */,
+				1C0EA8B32A38D6B000E06092 /* GothamPro.ttf in Resources */,
+				1C0EA8AA2A38D6B000E06092 /* GothamPro-LightItalic.ttf in Resources */,
+				1C0EA86A2A38B3EC00E06092 /* Nunito-Regular.ttf in Resources */,
+				1C0EA85E2A38B3EC00E06092 /* Nunito-Light.ttf in Resources */,
+				1C0EA8602A38B3EC00E06092 /* Nunito-ExtraLightItalic.ttf in Resources */,
+				1C0EA8B12A38D6B000E06092 /* GothamPro-Italic.ttf in Resources */,
+				1C0EA8682A38B3EC00E06092 /* Nunito-ExtraLight.ttf in Resources */,
 				1C0EA83B2A38AF1400E06092 /* LaunchScreen.storyboard in Resources */,
+				1C0EA8652A38B3EC00E06092 /* Nunito-Italic.ttf in Resources */,
+				1C0EA8AB2A38D6B000E06092 /* GothamPro-Light.ttf in Resources */,
+				1C0EA8642A38B3EC00E06092 /* Nunito-BoldItalic.ttf in Resources */,
+				1C0EA8AC2A38D6B000E06092 /* GothamProNarrow-Medium.ttf in Resources */,
+				1C0EA8A82A38D6B000E06092 /* GothamProNarrow-Bold.ttf in Resources */,
+				1C0EA8AE2A38D6B000E06092 /* GothamPro-Black.ttf in Resources */,
+				1C0EA8632A38B3EC00E06092 /* Nunito-BlackItalic.ttf in Resources */,
+				1C0EA8A92A38D6B000E06092 /* GothamPro-Medium.ttf in Resources */,
+				1C0EA8AF2A38D6B000E06092 /* GothamPro-BoldItalic.ttf in Resources */,
+				1C0EA85F2A38B3EC00E06092 /* Nunito-LightItalic.ttf in Resources */,
+				1C0EA8612A38B3EC00E06092 /* Nunito-MediumItalic.ttf in Resources */,
+				1C0EA8B22A38D6B000E06092 /* GothamPro-BlackItalic.ttf in Resources */,
+				1C0EA85D2A38B3EC00E06092 /* Nunito-SemiBoldItalic.ttf in Resources */,
 				1C0EA8382A38AF1400E06092 /* Assets.xcassets in Resources */,
-				1C0EA8362A38AF1300E06092 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +420,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0EA8332A38AF1300E06092 /* ViewController.swift in Sources */,
+				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
+				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
+				1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */,
+				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
+				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
+				1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */,
+				1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */,
+				1C0EA8332A38AF1300E06092 /* LoginViewController.swift in Sources */,
+				1C6650112A419A0700A36DF4 /* NumberViewController.swift in Sources */,
+				1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */,
 				1C0EA82F2A38AF1300E06092 /* AppDelegate.swift in Sources */,
+				1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */,
+				1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */,
+				1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */,
 				1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */,
+				1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */,
+				1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */,
+				1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */,
+				1C0EA86D2A38C96200E06092 /* CustomTextField.swift in Sources */,
+				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
+				1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1C0EA8342A38AF1300E06092 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C0EA8352A38AF1300E06092 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1C0EA8392A38AF1400E06092 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,8 +583,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = neobis_ios_marketplace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,8 +610,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = neobis_ios_marketplace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Snapkit/Snapkit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C0EA8462A38AFB500E06092 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C0EA8232A38AF1300E06092 /* Project object */;
 }
