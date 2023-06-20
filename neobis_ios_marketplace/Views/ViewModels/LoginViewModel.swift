@@ -38,7 +38,6 @@ class LoginViewModel: LoginProtocol {
                     self?.isLoggedIn = true
                     self?.loginResult?(.success(data))
                 case .failure(let error):
-                    // Handle login failure
                     print("fail")
                     self?.isLoggedIn = false
                     self?.loginResult?(.failure(error))

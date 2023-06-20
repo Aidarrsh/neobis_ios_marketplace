@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // Handle initialization from storyboard, if needed
     }
 
     override func viewDidLoad() {
@@ -48,7 +47,6 @@ class LoginViewController: UIViewController {
     @objc func enterButtonPressed() {
         
         guard let name = mainView.nameField.text, let password = mainView.passwordField.text else {
-            // Show error message to the user or handle the case when fields are empty
             print("Email or password is empty.")
             return
         }
@@ -57,7 +55,6 @@ class LoginViewController: UIViewController {
     }
     
     func handleSuccessfulLogin(_ data: Data) {
-        // Handle the successful login, e.g., navigate to the next view controller
         
         let vc = CustomTabBarC()
         vc.modalPresentationStyle = .fullScreen
@@ -71,7 +68,6 @@ class LoginViewController: UIViewController {
     }
     
     func handleLoginFailure(_ error: Error) {
-        // Handle the login failure, e.g., display an error message to the user
         print("Login failed with error: \(error)")
     }
 

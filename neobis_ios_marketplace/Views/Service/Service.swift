@@ -25,6 +25,7 @@ class APIService {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
+                print(error)
                 completion(.failure(error))
             } else if let data = data {
                 completion(.success(data))
@@ -32,5 +33,4 @@ class APIService {
         }
         task.resume()
     }
-
 }
