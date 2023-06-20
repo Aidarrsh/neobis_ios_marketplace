@@ -30,7 +30,6 @@ class LoginViewModel: LoginProtocol {
         
         apiService.post(endpoint: "login/", parameters: parameters) { [weak self] (result) in
             DispatchQueue.main.async {
-                print(result)
                 switch result {
                 case .success(let data):
 //                    let dataString = String(data: data, encoding: .utf8)
