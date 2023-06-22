@@ -30,7 +30,7 @@
 		1C0EA8682A38B3EC00E06092 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8582A38B3EC00E06092 /* Nunito-ExtraLight.ttf */; };
 		1C0EA8692A38B3EC00E06092 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA8592A38B3EC00E06092 /* Nunito-SemiBold.ttf */; };
 		1C0EA86A2A38B3EC00E06092 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA85A2A38B3EC00E06092 /* Nunito-Regular.ttf */; };
-		1C0EA86D2A38C96200E06092 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA86C2A38C96200E06092 /* CustomTextField.swift */; };
+		1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA86C2A38C96200E06092 /* AnimatedTextField.swift */; };
 		1C0EA8A82A38D6B000E06092 /* GothamProNarrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89C2A38D6B000E06092 /* GothamProNarrow-Bold.ttf */; };
 		1C0EA8A92A38D6B000E06092 /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89D2A38D6B000E06092 /* GothamPro-Medium.ttf */; };
 		1C0EA8AA2A38D6B000E06092 /* GothamPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C0EA89E2A38D6B000E06092 /* GothamPro-LightItalic.ttf */; };
@@ -47,6 +47,8 @@
 		1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */; };
 		1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */; };
 		1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */; };
+		1C315D472A4438BF000A41F7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */; };
+		1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D482A444BB2000A41F7 /* NumberTextField.swift */; };
 		1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */; };
 		1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650012A3EECC800A36DF4 /* ProfileView.swift */; };
 		1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */; };
@@ -59,6 +61,7 @@
 		1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44D92A41ACDC00E3EBEA /* Models.swift */; };
 		1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DC2A41AEC500E3EBEA /* Service.swift */; };
 		1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */; };
+		1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD323302A42FE3F00A3985C /* BorderedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +89,7 @@
 		1C0EA8582A38B3EC00E06092 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
 		1C0EA8592A38B3EC00E06092 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		1C0EA85A2A38B3EC00E06092 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		1C0EA86C2A38C96200E06092 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		1C0EA86C2A38C96200E06092 /* AnimatedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextField.swift; sourceTree = "<group>"; };
 		1C0EA89C2A38D6B000E06092 /* GothamProNarrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamProNarrow-Bold.ttf"; path = "../../../../../../Downloads/GothamPro/GothamProNarrow-Bold.ttf"; sourceTree = "<group>"; };
 		1C0EA89D2A38D6B000E06092 /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Medium.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		1C0EA89E2A38D6B000E06092 /* GothamPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-LightItalic.ttf"; path = "../../../../../../Downloads/GothamPro/GothamPro-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 		1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		1C315D482A444BB2000A41F7 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 		1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C6650012A3EECC800A36DF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		1CAF44D92A41ACDC00E3EBEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1CAF44DC2A41AEC500E3EBEA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1CD323302A42FE3F00A3985C /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +178,7 @@
 				1CAF44D82A41ACCF00E3EBEA /* Models */,
 				1CAF44DB2A41AEB500E3EBEA /* Service */,
 				1C6650072A4058AF00A36DF4 /* CustomTabBar */,
-				1C0EA86B2A38C95500E06092 /* CustomTextField */,
+				1C0EA86B2A38C95500E06092 /* CustomTextFields */,
 				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
 			path = Views;
@@ -230,12 +236,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		1C0EA86B2A38C95500E06092 /* CustomTextField */ = {
+		1C0EA86B2A38C95500E06092 /* CustomTextFields */ = {
 			isa = PBXGroup;
 			children = (
-				1C0EA86C2A38C96200E06092 /* CustomTextField.swift */,
+				1C0EA86C2A38C96200E06092 /* AnimatedTextField.swift */,
+				1CD323302A42FE3F00A3985C /* BorderedTextField.swift */,
+				1C315D482A444BB2000A41F7 /* NumberTextField.swift */,
 			);
-			path = CustomTextField;
+			path = CustomTextFields;
 			sourceTree = "<group>";
 		};
 		1C0EA8B42A3AFD2200E06092 /* Registration */ = {
@@ -312,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */,
+				1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -422,9 +431,11 @@
 			files = (
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
+				1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */,
 				1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */,
 				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
 				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
+				1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */,
 				1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */,
 				1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */,
 				1C0EA8332A38AF1300E06092 /* LoginViewController.swift in Sources */,
@@ -432,13 +443,14 @@
 				1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */,
 				1C0EA82F2A38AF1300E06092 /* AppDelegate.swift in Sources */,
 				1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */,
+				1C315D472A4438BF000A41F7 /* RegistrationViewModel.swift in Sources */,
 				1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */,
 				1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */,
 				1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */,
 				1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */,
 				1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */,
 				1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */,
-				1C0EA86D2A38C96200E06092 /* CustomTextField.swift in Sources */,
+				1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */,
 				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
 				1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */,
 			);

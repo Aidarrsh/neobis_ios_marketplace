@@ -11,6 +11,19 @@ import SnapKit
 
 class PasswordViewController: UIViewController {
     let mainView = PasswordView()
+    
+    var registerProtocol: RegisterProtocol!
+    var username: String = ""
+    var email: String = ""
+    
+    init(registerProtocol: RegisterViewModel) {
+        self.registerProtocol = registerProtocol
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +42,13 @@ class PasswordViewController: UIViewController {
     }
     
     @objc func finishButtonPressed() {
-        mainView.passwordError.isHidden = false
+        if mainView.passwordField.text == mainView.passwordConfirmField.text{
+            registerProtocol.register(username: username, email: email, password: mainView.passwordField.text!, password_repeat: mainView.passwordConfirmField.text!)
+        } else {
+            mainView.passwordError.isHidden = false
+            mainView.passwordField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+            mainView.passwordConfirmField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        }
     }
     
     @objc func backPressed() {

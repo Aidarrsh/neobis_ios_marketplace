@@ -15,7 +15,15 @@ class ProfileView: UIView {
         let image = UIImageView()
         image.image = UIImage(named: "defaultPic")
         
+        
         return image
+    }()
+    
+    let nickLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "gothamPro-Medium", size: 18)
+        
+        return label
     }()
     
     let firstSectionView: UIView = {
@@ -225,6 +233,7 @@ class ProfileView: UIView {
     
     func setupViews() {
         addSubview(profilePic)
+        addSubview(nickLabel)
         addSubview(firstSectionView)
         addSubview(secondSectionView)
         addSubview(likeButton)
@@ -239,6 +248,12 @@ class ProfileView: UIView {
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview().inset(148 * UIScreen.main.bounds.width / 375)
             make.trailing.equalToSuperview().inset(148 * UIScreen.main.bounds.width / 375)
+        }
+        
+        nickLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(204 * UIScreen.main.bounds.height / 812)
+            make.bottom.equalToSuperview().inset(584 * UIScreen.main.bounds.height / 812)
+            make.centerX.equalToSuperview()
         }
         
         firstSectionView.snp.makeConstraints{ make in

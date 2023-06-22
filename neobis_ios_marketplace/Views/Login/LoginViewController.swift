@@ -52,7 +52,6 @@ class LoginViewController: UIViewController {
             }
             
             loginViewModel.login(username: name, password: password)
-            
         }
     }
     
@@ -74,6 +73,11 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.mainView.statusLabel.isHidden = true
         }
+        
+        mainView.nameField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        mainView.passwordField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        mainView.nameLine.backgroundColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        mainView.passwordLine.backgroundColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
         print("Login failed with error: \(error)")
     }
 

@@ -10,6 +10,8 @@ import UIKit
 
 class CustomTabBarC: UITabBarController {
     
+    var nickName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -27,34 +27,26 @@ class LoginView: UIView, UITextFieldDelegate{
         return label
     }()
     
-    let nameField: CustomTextField = {
-        let field = CustomTextField()
+    let nameField: AnimatedTextField = {
+        let field = AnimatedTextField()
         field.placeholder = "Имя пользователя"
 
         let lineView = UIView()
         lineView.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
-        field.addSubview(lineView)
-
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.leading.bottom.trailing.equalToSuperview()
-        }
 
         return field
     }()
     
-    let passwordField: CustomTextField = {
-        let field = CustomTextField()
+    let nameLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
+
+        return view
+    }()
+    
+    let passwordField: AnimatedTextField = {
+        let field = AnimatedTextField()
         field.placeholder = "Пароль"
-
-        let lineView = UIView()
-        lineView.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
-        field.addSubview(lineView)
-
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.leading.bottom.trailing.equalToSuperview()
-        }
         
         field.isSecureTextEntry = true
         
@@ -68,6 +60,13 @@ class LoginView: UIView, UITextFieldDelegate{
         field.rightViewMode = .always
 
         return field
+    }()
+    
+    let passwordLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
+        
+        return view
     }()
     
     let enterButton: UIButton = {
@@ -144,7 +143,9 @@ class LoginView: UIView, UITextFieldDelegate{
         addSubview(cartImage)
         addSubview(marketLabel)
         addSubview(nameField)
+        addSubview(nameLine)
         addSubview(passwordField)
+        addSubview(passwordLine)
         addSubview(enterButton)
         addSubview(registerButton)
         addSubview(statusLabel)
@@ -171,11 +172,25 @@ class LoginView: UIView, UITextFieldDelegate{
             make.trailing.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
         }
         
+        nameLine.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.bottom.equalTo(nameField.snp.bottom)
+            make.leading.equalTo(nameField.snp.leading)
+            make.trailing.equalTo(nameField.snp.trailing)
+        }
+        
         passwordField.snp.makeConstraints{ make in
             make.top.equalToSuperview().inset(379 * UIScreen.main.bounds.height / 812)
             make.bottom.equalToSuperview().inset(397 * UIScreen.main.bounds.height / 812)
             make.leading.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
             make.trailing.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
+        }
+        
+        passwordLine.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.bottom.equalTo(passwordField.snp.bottom)
+            make.leading.equalTo(passwordField.snp.leading)
+            make.trailing.equalTo(passwordField.snp.trailing)
         }
         
         enterButton.snp.makeConstraints{ make in

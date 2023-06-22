@@ -27,8 +27,8 @@ class RegistrationView: UIView, UITextFieldDelegate{
         return label
     }()
     
-    let nameField: CustomTextField = {
-        let field = CustomTextField()
+    let nameField: AnimatedTextField = {
+        let field = AnimatedTextField()
         field.placeholder = "Имя пользователя"
 
         let lineView = UIView()
@@ -43,8 +43,8 @@ class RegistrationView: UIView, UITextFieldDelegate{
         return field
     }()
     
-    let mailField: CustomTextField = {
-        let field = CustomTextField()
+    let mailField: AnimatedTextField = {
+        let field = AnimatedTextField()
         field.placeholder = "Почта"
 
         let lineView = UIView()

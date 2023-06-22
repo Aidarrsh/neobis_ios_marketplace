@@ -8,6 +8,13 @@
 import Foundation
 
 struct Login: Codable {
-    var username: String
-    var password: String
+    let username: String
+    let password: String
+}
+
+struct RegistrationModel: Codable {
+    let username: String
+    let email: String?
+    let password: String
+    let password_repeat: String
 }

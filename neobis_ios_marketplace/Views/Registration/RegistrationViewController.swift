@@ -27,7 +27,10 @@ class RegistrationViewController: UIViewController {
     @objc func enterButtonPressed() {
         
         if mainView.enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
-            let vc = PasswordViewController()
+            let vc = PasswordViewController(registerProtocol: RegisterViewModel())
+            
+            vc.username = mainView.nameField.text ?? ""
+            vc.email = mainView.mailField.text ?? ""
             
             navigationController?.pushViewController(vc, animated: true)
         }

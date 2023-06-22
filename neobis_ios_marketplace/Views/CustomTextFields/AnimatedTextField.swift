@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class CustomTextField: UITextField {
+class AnimatedTextField: UITextField {
     
     var floatingLabel: UILabel = UILabel()
     var defaultPlaceholderColor: UIColor = UIColor.lightGray

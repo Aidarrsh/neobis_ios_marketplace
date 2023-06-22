@@ -16,14 +16,31 @@ class FinishRegViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let changeButton = UIBarButtonItem(image: UIImage(named: "change")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(changeButtonPressed))
-        self.navigationItem.rightBarButtonItem = changeButton
+        let cancelButton = UIBarButtonItem(image: UIImage(named: "cancel")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(cancelPressed))
+        self.navigationItem.leftBarButtonItem = cancelButton
+        
+        let finishButton = UIBarButtonItem(image: UIImage(named: "finish")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(finishPressed))
+        self.navigationItem.rightBarButtonItem = finishButton
+        
+        mainView.setPicButton.addTarget(self, action: #selector(setPic), for: .touchUpInside)
         
         setupView()
     }
     
-    @objc func changeButtonPressed() {
-        
+    @objc func setPic() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    @objc func cancelPressed() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func finishPressed() {
+        navigationController?.popViewController(animated: true)
     }
     
     func setupView() {
@@ -31,5 +48,21 @@ class FinishRegViewController: UIViewController {
         mainView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
+    }
+}
+
+extension FinishRegViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage{
+            mainView.profilePic.image = image
+        }
+        
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 }

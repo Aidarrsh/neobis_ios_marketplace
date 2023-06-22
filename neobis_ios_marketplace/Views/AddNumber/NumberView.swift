@@ -53,6 +53,27 @@ class NumberView: UIView {
         return label
     }()
     
+    let numberField: NumberTextField = {
+        let field = NumberTextField()
+        field.font = UIFont(name: "GothamPro-Bold", size: 28)
+        field.placeholder = "0(000) 000 000"
+        field.textAlignment = .center
+        
+        return field
+    }()
+    
+    let enterButton: UIButton = {
+        let button = UIButton()
+//        button.backgroundColor = UIColor(red: 0.329, green: 0.345, blue: 0.918, alpha: 1)
+        button.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
+        button.layer.cornerRadius = 23 * UIScreen.main.bounds.height / 812
+        button.setTitle("Далее", for: .normal)
+        button.titleLabel?.font = UIFont(name: "GothamPro-Bold", size: 16)
+        
+        
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -64,8 +85,18 @@ class NumberView: UIView {
     override func layoutSubviews() {
         backgroundColor = .white
         
+        numberField.addTarget(self, action: #selector(numberFieldDidChange(_:)), for: .editingChanged)
+        
         setupViews()
         setupConstraints()
+    }
+    
+    @objc private func numberFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text, text.count == 10 {
+            enterButton.backgroundColor = UIColor(red: 0.329, green: 0.345, blue: 0.918, alpha: 1)
+        } else {
+            enterButton.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
+        }
     }
     
     func setupViews() {
@@ -73,6 +104,8 @@ class NumberView: UIView {
         addSubview(phoneImage)
         addSubview(mainLabel)
         addSubview(descriptionLabel)
+        addSubview(numberField)
+        addSubview(enterButton)
     }
     
     func setupConstraints() {
@@ -99,6 +132,20 @@ class NumberView: UIView {
         descriptionLabel.snp.makeConstraints{ make in
             make.top.equalToSuperview().inset(263 * UIScreen.main.bounds.height / 812)
             make.bottom.equalToSuperview().inset(511 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
+        }
+        
+        numberField.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(334 * UIScreen.main.bounds.height / 812)
+            make.bottom.equalToSuperview().inset(444 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(62 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalToSuperview().inset(62 * UIScreen.main.bounds.width / 375)
+        }
+        
+        enterButton.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(497 * UIScreen.main.bounds.height / 812)
+            make.bottom.equalToSuperview().inset(271 * UIScreen.main.bounds.height / 812)
             make.leading.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
             make.trailing.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
         }
