@@ -29,7 +29,7 @@ class RegisterViewModel: RegisterProtocol {
     func register(username: String, email: String?, password: String, password_repeat: String) {
         let parameters: [String: Any] = ["username": username, "email": email!, "password": password, "password_repeat": password_repeat]
         
-        apiService.post(endpoint: " account/register/", parameters: parameters) { [weak self] (result) in
+        apiService.post(endpoint: "account/register/", parameters: parameters) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -38,6 +38,7 @@ class RegisterViewModel: RegisterProtocol {
                     self?.isRegistered = true
                     self?.registerResult?(.success(data))
                 case .failure(let error):
+                    print("Failed register")
                     self?.isRegistered = false
                     self?.registerResult?(.failure(error))
                 }

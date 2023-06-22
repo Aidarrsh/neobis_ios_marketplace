@@ -160,7 +160,6 @@
 				1CAF44DB2A41AEB500E3EBEA /* Service */,
 				1C6650072A4058AF00A36DF4 /* CustomTabBar */,
 				1C0EA86B2A38C95500E06092 /* CustomTextFields */,
-				1C0EA84A2A38B38D00E06092 /* Fonts */,
 				1C0EA82E2A38AF1300E06092 /* AppDelegate.swift */,
 				1C0EA8302A38AF1300E06092 /* SceneDelegate.swift */,
 				1C0EA8372A38AF1400E06092 /* Assets.xcassets */,
@@ -180,6 +179,7 @@
 				1C664FFD2A3EEC9E00A36DF4 /* Profile */,
 				1C66500A2A40641800A36DF4 /* FinishRegistration */,
 				1C66500F2A4199C700A36DF4 /* AddNumber */,
+				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
 			path = Views;
 			sourceTree = "<group>";
