@@ -70,8 +70,6 @@ class FinishRegView: UIView {
         return field
     }()
 
-
-    
     let secondSectionView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -108,6 +106,13 @@ class FinishRegView: UIView {
         
         return label
     }()
+    
+    let emailField: UITextField = {
+        let field = UITextField()
+        field.font = UIFont(name: "GothamPro-Medium", size: 16)
+        
+        return field
+    }()
 
     
     override init(frame: CGRect) {
@@ -136,6 +141,7 @@ class FinishRegView: UIView {
         addSubview(birthdayField)
         addSubview(numberButton)
         addSubview(numberLabel)
+        addSubview(emailField)
     }
     
     func setupConstraints() {
@@ -208,6 +214,13 @@ class FinishRegView: UIView {
             make.leading.equalTo(secondSectionView.snp.leading).inset(184 * UIScreen.main.bounds.width / 375)
             make.trailing.equalTo(secondSectionView.snp.trailing).inset(16 * UIScreen.main.bounds.width / 375)
             make.bottom.equalTo(secondSectionView.snp.bottom).inset(55 * UIScreen.main.bounds.height / 812)
+        }
+        
+        emailField.snp.makeConstraints{ make in
+            make.top.equalTo(secondSectionView.snp.top).inset(55 * UIScreen.main.bounds.height / 812)
+            make.leading.equalTo(secondSectionView.snp.leading).inset(16 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalTo(secondSectionView.snp.trailing).inset(16 * UIScreen.main.bounds.width / 375)
+            make.bottom.equalTo(secondSectionView.snp.bottom).inset(10 * UIScreen.main.bounds.height / 812)
         }
     }
 }

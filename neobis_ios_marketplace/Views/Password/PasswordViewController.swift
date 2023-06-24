@@ -12,12 +12,12 @@ import SnapKit
 class PasswordViewController: UIViewController {
     let mainView = PasswordView()
     
-    var registerProtocol: RegisterProtocol!
+    var passwordProtocol: PasswordProtocol!
     var username: String = ""
     var email: String = ""
     
-    init(registerProtocol: RegisterViewModel) {
-        self.registerProtocol = registerProtocol
+    init(registerProtocol: PasswordProtocol) {
+        self.passwordProtocol = registerProtocol
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,16 +38,39 @@ class PasswordViewController: UIViewController {
         
         mainView.finishButton.addTarget(self, action: #selector(finishButtonPressed), for: .touchUpInside)
         
+        passwordProtocol.registerResult = { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    self?.handleSuccessfulLogin(data)
+                case .failure(let error):
+                    self?.handleLoginFailure(error)
+                }
+            }
+        }
+        
         setupView()
+    }
+    
+    func handleSuccessfulLogin(_ data: Data) {
+        
+        print ("success")
+        
+        let vc = LoginViewController(loginProtocol: LoginViewModel())
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func handleLoginFailure(_ error: Error) {
+        
+        mainView.passwordError.isHidden = false
+        mainView.passwordField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        mainView.passwordConfirmField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        print("Login failed with error: \(error)")
     }
     
     @objc func finishButtonPressed() {
         if mainView.passwordField.text == mainView.passwordConfirmField.text{
-            registerProtocol.register(username: username, email: email, password: mainView.passwordField.text!, password_repeat: mainView.passwordConfirmField.text!)
-        } else {
-            mainView.passwordError.isHidden = false
-            mainView.passwordField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
-            mainView.passwordConfirmField.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+            passwordProtocol.register( password: mainView.passwordField.text!, password_repeat: mainView.passwordConfirmField.text!)
         }
     }
     

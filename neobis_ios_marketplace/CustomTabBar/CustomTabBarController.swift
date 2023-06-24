@@ -35,7 +35,7 @@ class CustomTabBarC: UITabBarController {
         cartVC.view.backgroundColor = .white
         cartVC.tabBarItem = UITabBarItem(title: "Чаты", image: UIImage(named: "chat"), selectedImage: nil)
         
-        let profileVC = UINavigationController(rootViewController: ProfileViewController())
+        let profileVC = UINavigationController(rootViewController: ProfileViewController(getUserProtocol: GetUserViewModel()))
         profileVC.view.backgroundColor = .white
         profileVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "user"), selectedImage: nil)
         

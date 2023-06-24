@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class NumberView: UIView {
+class NumberView: UIView, UITextFieldDelegate {
     
     let phoneView: UIView = {
         let view = UIView()
@@ -53,16 +53,27 @@ class NumberView: UIView {
         return label
     }()
     
-    let numberField: NumberTextField = {
-        let field = NumberTextField()
+    let numberField: UITextField = {
+        let field = UITextField()
         field.font = UIFont(name: "GothamPro-Bold", size: 28)
         field.placeholder = "0(000) 000 000"
         field.textAlignment = .center
-        
+        field.keyboardType = .numberPad
         return field
     }()
     
-    let enterButton: UIButton = {
+    let errorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Данный номер уже зарегистрирован"
+        label.textColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
+        label.font = UIFont(name: "SFProText-Medium", size: 17)
+        label.isHidden = true
+        label.numberOfLines = 1
+        
+        return label
+    }()
+    
+    @objc let enterButton: UIButton = {
         let button = UIButton()
 //        button.backgroundColor = UIColor(red: 0.329, green: 0.345, blue: 0.918, alpha: 1)
         button.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
@@ -76,6 +87,7 @@ class NumberView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        numberField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -86,19 +98,43 @@ class NumberView: UIView {
         backgroundColor = .white
         
         numberField.addTarget(self, action: #selector(numberFieldDidChange(_:)), for: .editingChanged)
-        
         setupViews()
         setupConstraints()
     }
     
     @objc private func numberFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text, text.count == 10 {
+        if let text = textField.text, text.count == 14 {
             enterButton.backgroundColor = UIColor(red: 0.329, green: 0.345, blue: 0.918, alpha: 1)
         } else {
             enterButton.backgroundColor = UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1)
         }
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = format(with: "X(XXX) XXX XXX", phone: newString)
+        return false
+    }
+    
+    func format(with mask: String, phone: String) -> String {
+        let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = numbers.startIndex
+
+        for ch in mask where index < numbers.endIndex {
+            if ch == "X" {
+                result.append(numbers[index])
+
+                index = numbers.index(after: index)
+
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+            
     func setupViews() {
         addSubview(phoneView)
         addSubview(phoneImage)
@@ -106,6 +142,7 @@ class NumberView: UIView {
         addSubview(descriptionLabel)
         addSubview(numberField)
         addSubview(enterButton)
+        addSubview(errorLabel)
     }
     
     func setupConstraints() {
@@ -148,6 +185,13 @@ class NumberView: UIView {
             make.bottom.equalToSuperview().inset(271 * UIScreen.main.bounds.height / 812)
             make.leading.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
             make.trailing.equalToSuperview().inset(20 * UIScreen.main.bounds.width / 375)
+        }
+        
+        errorLabel.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(384 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(34 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalToSuperview().inset(34 * UIScreen.main.bounds.width / 375)
+            make.bottom.equalToSuperview().inset(406 * UIScreen.main.bounds.height / 812)
         }
     }
 }

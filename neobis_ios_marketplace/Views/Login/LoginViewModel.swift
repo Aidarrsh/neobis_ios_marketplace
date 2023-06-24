@@ -34,8 +34,13 @@ class LoginViewModel: LoginProtocol {
                 case .success(let data):
 //                    let dataString = String(data: data, encoding: .utf8)
 //                    print("Data received: \(dataString ?? "nil")")
-                    self?.isLoggedIn = true
-                    self?.loginResult?(.success(data))
+                    let decoder = JSONDecoder()
+                    if let tokenResponse = try? decoder.decode(TokenResponse.self, from: data) {
+                        AuthManager.shared.accessToken = tokenResponse.access
+                        
+                        self?.isLoggedIn = true
+                        self?.loginResult?(.success(data))
+                    }
                 case .failure(let error):
                     print("fail")
                     self?.isLoggedIn = false

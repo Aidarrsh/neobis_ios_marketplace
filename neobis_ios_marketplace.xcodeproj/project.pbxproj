@@ -47,8 +47,13 @@
 		1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */; };
 		1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */; };
 		1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */; };
-		1C315D472A4438BF000A41F7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */; };
+		1C315D472A4438BF000A41F7 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D462A4438BF000A41F7 /* PasswordViewModel.swift */; };
 		1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D482A444BB2000A41F7 /* NumberTextField.swift */; };
+		1C315D4F2A45A94C000A41F7 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D4E2A45A94C000A41F7 /* AuthManager.swift */; };
+		1C315D522A45AB47000A41F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1C315D512A45AB47000A41F7 /* Alamofire */; };
+		1C315D552A45B802000A41F7 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D542A45B802000A41F7 /* NumberViewModel.swift */; };
+		1C315D582A46D4B5000A41F7 /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D572A46D4B5000A41F7 /* GetUserData.swift */; };
+		1C315D5A2A46E53B000A41F7 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C315D592A46E53B000A41F7 /* SFProText-Medium.ttf */; };
 		1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */; };
 		1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650012A3EECC800A36DF4 /* ProfileView.swift */; };
 		1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */; };
@@ -106,8 +111,12 @@
 		1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
-		1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		1C315D462A4438BF000A41F7 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		1C315D482A444BB2000A41F7 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
+		1C315D4E2A45A94C000A41F7 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		1C315D542A45B802000A41F7 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		1C315D572A46D4B5000A41F7 /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
+		1C315D592A46E53B000A41F7 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
 		1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C6650012A3EECC800A36DF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0EA8472A38AFB500E06092 /* SnapKit in Frameworks */,
+				1C315D522A45AB47000A41F7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				1C0EA8422A38AF7200E06092 /* Views */,
-				1CAF44DE2A41AF6400E3EBEA /* ViewModels */,
+				1C315D562A46D4A2000A41F7 /* GetUserData */,
+				1C315D4D2A45A8DD000A41F7 /* AuthManager */,
 				1CAF44D82A41ACCF00E3EBEA /* Models */,
 				1CAF44DB2A41AEB500E3EBEA /* Service */,
 				1C6650072A4058AF00A36DF4 /* CustomTabBar */,
@@ -195,8 +206,9 @@
 		1C0EA8442A38AF9200E06092 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D4C2A45831D000A41F7 /* Views */,
 				1C0EA8322A38AF1300E06092 /* LoginViewController.swift */,
-				1C0EA8482A38AFCD00E06092 /* LoginView.swift */,
+				1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -204,6 +216,7 @@
 		1C0EA84A2A38B38D00E06092 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D592A46E53B000A41F7 /* SFProText-Medium.ttf */,
 				1C0EA8A22A38D6B000E06092 /* GothamPro-Black.ttf */,
 				1C0EA8A62A38D6B000E06092 /* GothamPro-BlackItalic.ttf */,
 				1C0EA8A12A38D6B000E06092 /* GothamPro-Bold.ttf */,
@@ -249,8 +262,8 @@
 		1C0EA8B42A3AFD2200E06092 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D4A2A4484FC000A41F7 /* Views */,
 				1C0EA8B52A3AFD9400E06092 /* RegistrationViewController.swift */,
-				1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -258,10 +271,59 @@
 		1C0EA8B92A3B062E00E06092 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D4B2A457FB1000A41F7 /* Views */,
 				1C0EA8BA2A3B064600E06092 /* PasswordViewController.swift */,
-				1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */,
+				1C315D462A4438BF000A41F7 /* PasswordViewModel.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		1C315D4A2A4484FC000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8B72A3AFDAF00E06092 /* RegistrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D4B2A457FB1000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8BC2A3B064E00E06092 /* PasswordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D4C2A45831D000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C0EA8482A38AFCD00E06092 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D4D2A45A8DD000A41F7 /* AuthManager */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D4E2A45A94C000A41F7 /* AuthManager.swift */,
+			);
+			path = AuthManager;
+			sourceTree = "<group>";
+		};
+		1C315D532A45B7F4000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C6650122A419A4C00A36DF4 /* NumberView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D562A46D4A2000A41F7 /* GetUserData */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D572A46D4B5000A41F7 /* GetUserData.swift */,
+			);
+			path = GetUserData;
 			sourceTree = "<group>";
 		};
 		1C664FFD2A3EEC9E00A36DF4 /* Profile */ = {
@@ -294,8 +356,9 @@
 		1C66500F2A4199C700A36DF4 /* AddNumber */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D532A45B7F4000A41F7 /* Views */,
 				1C6650102A419A0700A36DF4 /* NumberViewController.swift */,
-				1C6650122A419A4C00A36DF4 /* NumberView.swift */,
+				1C315D542A45B802000A41F7 /* NumberViewModel.swift */,
 			);
 			path = AddNumber;
 			sourceTree = "<group>";
@@ -316,15 +379,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		1CAF44DE2A41AF6400E3EBEA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */,
-				1C315D462A4438BF000A41F7 /* RegistrationViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +397,7 @@
 			name = neobis_ios_marketplace;
 			packageProductDependencies = (
 				1C0EA8462A38AFB500E06092 /* SnapKit */,
+				1C315D512A45AB47000A41F7 /* Alamofire */,
 			);
 			productName = neobis_ios_marketplace;
 			productReference = 1C0EA82B2A38AF1300E06092 /* neobis_ios_marketplace.app */;
@@ -374,6 +429,7 @@
 			mainGroup = 1C0EA8222A38AF1300E06092;
 			packageReferences = (
 				1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */,
+				1C315D502A45AB47000A41F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 1C0EA82C2A38AF1300E06092 /* Products */;
 			projectDirPath = "";
@@ -413,6 +469,7 @@
 				1C0EA8AE2A38D6B000E06092 /* GothamPro-Black.ttf in Resources */,
 				1C0EA8632A38B3EC00E06092 /* Nunito-BlackItalic.ttf in Resources */,
 				1C0EA8A92A38D6B000E06092 /* GothamPro-Medium.ttf in Resources */,
+				1C315D5A2A46E53B000A41F7 /* SFProText-Medium.ttf in Resources */,
 				1C0EA8AF2A38D6B000E06092 /* GothamPro-BoldItalic.ttf in Resources */,
 				1C0EA85F2A38B3EC00E06092 /* Nunito-LightItalic.ttf in Resources */,
 				1C0EA8612A38B3EC00E06092 /* Nunito-MediumItalic.ttf in Resources */,
@@ -431,7 +488,9 @@
 			files = (
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
+				1C315D582A46D4B5000A41F7 /* GetUserData.swift in Sources */,
 				1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */,
+				1C315D552A45B802000A41F7 /* NumberViewModel.swift in Sources */,
 				1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */,
 				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
 				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
@@ -443,7 +502,7 @@
 				1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */,
 				1C0EA82F2A38AF1300E06092 /* AppDelegate.swift in Sources */,
 				1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */,
-				1C315D472A4438BF000A41F7 /* RegistrationViewModel.swift in Sources */,
+				1C315D472A4438BF000A41F7 /* PasswordViewModel.swift in Sources */,
 				1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */,
 				1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */,
 				1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */,
@@ -453,6 +512,7 @@
 				1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */,
 				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
 				1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */,
+				1C315D4F2A45A94C000A41F7 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +730,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1C315D502A45AB47000A41F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,6 +745,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */;
 			productName = SnapKit;
+		};
+		1C315D512A45AB47000A41F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C315D502A45AB47000A41F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

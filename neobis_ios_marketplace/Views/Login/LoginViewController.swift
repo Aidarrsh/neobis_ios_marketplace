@@ -11,17 +11,17 @@ import SnapKit
 class LoginViewController: UIViewController {
     
     let mainView = LoginView()
-    var loginViewModel: LoginViewModel!
-
-    init(loginViewModel: LoginViewModel) {
-        self.loginViewModel = loginViewModel
+    var loginProtocol: LoginProtocol!
+    
+    init(loginProtocol: LoginProtocol) {
+        self.loginProtocol = loginProtocol
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         mainView.registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
         mainView.enterButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
         
-        loginViewModel.loginResult = { [weak self] result in
+        loginProtocol.loginResult = { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     @objc func enterButtonPressed() {
         
         if mainView.enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
@@ -51,12 +56,12 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            loginViewModel.login(username: name, password: password)
+            loginProtocol.login(username: name, password: password)
         }
     }
     
     func handleSuccessfulLogin(_ data: Data) {
-        
+
         let vc = CustomTabBarC()
         vc.modalPresentationStyle = .fullScreen
         
@@ -80,13 +85,13 @@ class LoginViewController: UIViewController {
         mainView.passwordLine.backgroundColor = UIColor(red: 0.954, green: 0.27, blue: 0.27, alpha: 1)
         print("Login failed with error: \(error)")
     }
-
+    
     @objc func registerButtonPressed() {
         let vc = RegistrationViewController()
         
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     func setupView() {
         view.addSubview(mainView)
         mainView.snp.makeConstraints{ make in

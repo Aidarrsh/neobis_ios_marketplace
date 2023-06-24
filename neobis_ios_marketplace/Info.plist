@@ -6,6 +6,7 @@
 	<string>Please allow access to library</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SFProText-Medium.ttf</string>
 		<string>GothamPro-Bold.ttf</string>
 		<string>GothamPro-Medium.ttf</string>
 		<string>GothamPro-Italic.ttf</string>

@@ -8,26 +8,31 @@
 import Foundation
 import UIKit
 
-protocol RegisterProtocol {
+protocol PasswordProtocol {
     var isRegistered: Bool { get }
     var registerResult: ((Result<Data, Error>) -> Void)? { get set }
     
-    func register(username: String, email: String?, password: String, password_repeat: String)
+    func register(password: String, password_repeat: String)
 }
 
-class RegisterViewModel: RegisterProtocol {
+class PasswordViewModel: PasswordProtocol {
     
     var isRegistered: Bool = false
     var registerResult: ((Result<Data, Error>) -> Void)?
     
     let apiService: APIService
     
-    init() {
+    private let userName: String
+    private let email: String
+    
+    init(userName: String, email: String) {
         self.apiService = APIService()
+        self.userName = userName
+        self.email = email
     }
     
-    func register(username: String, email: String?, password: String, password_repeat: String) {
-        let parameters: [String: Any] = ["username": username, "email": email!, "password": password, "password_repeat": password_repeat]
+    func register(password: String, password_repeat: String) {
+        let parameters: [String: Any] = ["username": userName, "email": email, "password": password, "password_repeat": password_repeat]
         
         apiService.post(endpoint: "account/register/", parameters: parameters) { [weak self] (result) in
             DispatchQueue.main.async {

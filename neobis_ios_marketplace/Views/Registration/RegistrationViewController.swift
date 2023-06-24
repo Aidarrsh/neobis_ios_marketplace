@@ -10,7 +10,7 @@ import SnapKit
 
 class RegistrationViewController: UIViewController {
     
-    let mainView = RegistrationView()
+    let contentView = RegistrationView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +21,18 @@ class RegistrationViewController: UIViewController {
         title = "Регистрация"
         
         setupView()
-        mainView.enterButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
+        contentView.enterButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
     }
     
     @objc func enterButtonPressed() {
         
-        if mainView.enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
-            let vc = PasswordViewController(registerProtocol: RegisterViewModel())
+        if contentView.enterButton.backgroundColor != UIColor(red: 0.754, green: 0.754, blue: 0.754, alpha: 1) {
+            guard let userName = contentView.nameField.text else { return }
+            guard let email = contentView.mailField.text else { return }
+            let vc = PasswordViewController(registerProtocol: PasswordViewModel(userName: userName, email: email))
             
-            vc.username = mainView.nameField.text ?? ""
-            vc.email = mainView.mailField.text ?? ""
+            vc.username = contentView.nameField.text ?? ""
+            vc.email = contentView.mailField.text ?? ""
             
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -41,8 +43,8 @@ class RegistrationViewController: UIViewController {
     }
 
     func setupView() {
-        view.addSubview(mainView)
-        mainView.snp.makeConstraints{ make in
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
     }
