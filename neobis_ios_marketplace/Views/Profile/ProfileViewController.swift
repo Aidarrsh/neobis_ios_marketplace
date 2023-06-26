@@ -46,6 +46,8 @@ class ProfileViewController: UIViewController {
             return
         }
         
+        print(accessToken)
+        
         getUserProtocol.fetchUserData(accessToken: accessToken) { [weak self] result in
             switch result {
             case .success(let userData):
@@ -86,17 +88,21 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func finishRegPressed() {
-        let vc = FinishRegViewController()
+        let vc = FinishRegViewController(getUserProtocol: GetUserViewModel())
         
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func changeButtonPressed() {
+        let vc = FinishRegViewController(getUserProtocol: GetUserViewModel())
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func exitButtonPressed() {
+        let vc = CustomTabBarC()
         
+        dismiss(animated: true, completion: nil)
     }
     
     func setupView() {

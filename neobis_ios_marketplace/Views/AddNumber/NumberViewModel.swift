@@ -23,17 +23,21 @@ class NumberViewModel: NumberProtocol {
     
     let apiService: APIService
     
+    private let first_name: String
     private let last_name: String
     private let birthday: String
+    private let photo: String
     
-    init(last_name: String, birthday: String) {
+    init(first_name: String ,last_name: String, birthday: String, photo: String) {
         self.apiService = APIService()
+        self.first_name = first_name
         self.last_name = last_name
         self.birthday = birthday
+        self.photo = photo
     }
     
     func fullRegister(phone_number: String) {
-        var parameters: [String: Any] = ["last_name": last_name, "birthday": birthday, "phone_number": phone_number]
+        var parameters: [String: Any] = ["first_name": first_name, "last_name": last_name, "birthday": birthday, "phone_number": phone_number, "photo": photo]
         
         guard let accessToken = AuthManager.shared.accessToken else {
             return

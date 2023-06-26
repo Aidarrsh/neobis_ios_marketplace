@@ -54,6 +54,9 @@
 		1C315D552A45B802000A41F7 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D542A45B802000A41F7 /* NumberViewModel.swift */; };
 		1C315D582A46D4B5000A41F7 /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D572A46D4B5000A41F7 /* GetUserData.swift */; };
 		1C315D5A2A46E53B000A41F7 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C315D592A46E53B000A41F7 /* SFProText-Medium.ttf */; };
+		1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D5E2A483710000A41F7 /* Data+Extensions.swift */; };
+		1C315D622A484183000A41F7 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D612A484183000A41F7 /* OTPViewController.swift */; };
+		1C315D652A4841B5000A41F7 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D642A4841B5000A41F7 /* OTPView.swift */; };
 		1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */; };
 		1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650012A3EECC800A36DF4 /* ProfileView.swift */; };
 		1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */; };
@@ -117,6 +120,9 @@
 		1C315D542A45B802000A41F7 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
 		1C315D572A46D4B5000A41F7 /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
 		1C315D592A46E53B000A41F7 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
+		1C315D5E2A483710000A41F7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		1C315D612A484183000A41F7 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		1C315D642A4841B5000A41F7 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C6650012A3EECC800A36DF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1C0EA8422A38AF7200E06092 /* Views */,
+				1C315D5D2A4836FB000A41F7 /* Extensions */,
 				1C315D562A46D4A2000A41F7 /* GetUserData */,
 				1C315D4D2A45A8DD000A41F7 /* AuthManager */,
 				1CAF44D82A41ACCF00E3EBEA /* Models */,
@@ -183,6 +190,7 @@
 		1C0EA8422A38AF7200E06092 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D602A484175000A41F7 /* OTP */,
 				1C0EA8432A38AF7D00E06092 /* SplashScreen */,
 				1C0EA8442A38AF9200E06092 /* Login */,
 				1C0EA8B42A3AFD2200E06092 /* Registration */,
@@ -190,6 +198,8 @@
 				1C664FFD2A3EEC9E00A36DF4 /* Profile */,
 				1C66500A2A40641800A36DF4 /* FinishRegistration */,
 				1C66500F2A4199C700A36DF4 /* AddNumber */,
+				1C315D5B2A470527000A41F7 /* LikeScreen */,
+				1C315D5C2A470533000A41F7 /* ProductScreen */,
 				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
 			path = Views;
@@ -324,6 +334,45 @@
 				1C315D572A46D4B5000A41F7 /* GetUserData.swift */,
 			);
 			path = GetUserData;
+			sourceTree = "<group>";
+		};
+		1C315D5B2A470527000A41F7 /* LikeScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LikeScreen;
+			sourceTree = "<group>";
+		};
+		1C315D5C2A470533000A41F7 /* ProductScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductScreen;
+			sourceTree = "<group>";
+		};
+		1C315D5D2A4836FB000A41F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D5E2A483710000A41F7 /* Data+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1C315D602A484175000A41F7 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D632A4841AA000A41F7 /* Views */,
+				1C315D612A484183000A41F7 /* OTPViewController.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		1C315D632A4841AA000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D642A4841B5000A41F7 /* OTPView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1C664FFD2A3EEC9E00A36DF4 /* Profile */ = {
@@ -487,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
+				1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
 				1C315D582A46D4B5000A41F7 /* GetUserData.swift in Sources */,
 				1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */,
@@ -496,6 +546,7 @@
 				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
 				1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */,
 				1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */,
+				1C315D622A484183000A41F7 /* OTPViewController.swift in Sources */,
 				1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */,
 				1C0EA8332A38AF1300E06092 /* LoginViewController.swift in Sources */,
 				1C6650112A419A0700A36DF4 /* NumberViewController.swift in Sources */,
@@ -510,6 +561,7 @@
 				1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */,
 				1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */,
 				1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */,
+				1C315D652A4841B5000A41F7 /* OTPView.swift in Sources */,
 				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
 				1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */,
 				1C315D4F2A45A94C000A41F7 /* AuthManager.swift in Sources */,

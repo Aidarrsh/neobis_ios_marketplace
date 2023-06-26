@@ -20,14 +20,18 @@ struct RegistrationModel: Codable {
 }
 
 struct FullRegister: Codable {
+    let first_name: String?
     let last_name: String?
     let birthday: String?
     let phone_number: String?
+    let photo: String?
     
     enum CodingKeys: String, CodingKey {
+        case first_name = "first_name"
         case last_name = "last_name"
         case birthday
         case phone_number = "phone_number"
+        case photo
     }
 }
 

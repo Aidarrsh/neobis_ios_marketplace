@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class FinishRegView: UIView {
+class FinishRegView: UIView, UITextFieldDelegate {
     
     var nickName: String = ""
     
@@ -126,8 +126,18 @@ class FinishRegView: UIView {
     override func layoutSubviews() {
         backgroundColor = UIColor(red: 0.969, green: 0.965, blue: 0.976, alpha: 1)
         
+        nameField.delegate = self
+        emailField.delegate = self
+        birthdayField.delegate = self
+        lastNameField.delegate = self
+        nickNameField.delegate = self
+        
         setupViews()
         setupConstraints()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.endEditing(true)
     }
     
     func setupViews() {

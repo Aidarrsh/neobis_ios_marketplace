@@ -43,11 +43,14 @@ class PasswordViewModel: PasswordProtocol {
                     self?.isRegistered = true
                     self?.registerResult?(.success(data))
                 case .failure(let error):
-                    print("Failed register")
+                    let errorMessage = "Failed register number: \(error.localizedDescription)"
+                    print(errorMessage)
+//                    print("Failed register number")
                     self?.isRegistered = false
                     self?.registerResult?(.failure(error))
                 }
             }
         }
     }
+
 }
