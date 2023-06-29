@@ -14,7 +14,9 @@ class ProfileView: UIView {
     let profilePic: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "defaultPic")
-        
+        image.layer.cornerRadius = 40 * UIScreen.main.bounds.height / 812
+        image.clipsToBounds = true
+        image.contentMode = .scaleAspectFill
         
         return image
     }()
@@ -245,7 +247,8 @@ class ProfileView: UIView {
     func setupConstraints() {
         profilePic.snp.makeConstraints{ make in
             make.top.equalToSuperview().inset(112 * UIScreen.main.bounds.height / 812)
-            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(620 * UIScreen.main.bounds.height / 812)
+//            make.centerX.equalToSuperview()
             make.leading.equalToSuperview().inset(148 * UIScreen.main.bounds.width / 375)
             make.trailing.equalToSuperview().inset(148 * UIScreen.main.bounds.width / 375)
         }

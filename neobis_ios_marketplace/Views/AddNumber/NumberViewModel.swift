@@ -1,12 +1,4 @@
-//
-//  NumberViewModel.swift
-//  neobis_ios_marketplace
-//
-//  Created by Айдар Шарипов on 23/6/23.
-//
-
 import Foundation
-import UIKit
 import Alamofire
 
 protocol NumberProtocol {
@@ -26,9 +18,9 @@ class NumberViewModel: NumberProtocol {
     private let first_name: String
     private let last_name: String
     private let birthday: String
-    private let photo: String
+    private let photo: Data
     
-    init(first_name: String ,last_name: String, birthday: String, photo: String) {
+    init(first_name: String ,last_name: String, birthday: String, photo: Data) {
         self.apiService = APIService()
         self.first_name = first_name
         self.last_name = last_name
@@ -37,17 +29,17 @@ class NumberViewModel: NumberProtocol {
     }
     
     func fullRegister(phone_number: String) {
-        var parameters: [String: Any] = ["first_name": first_name, "last_name": last_name, "birthday": birthday, "phone_number": phone_number, "photo": photo]
-        
-        guard let accessToken = AuthManager.shared.accessToken else {
-            return
-        }
-        
-//        print(accessToken)
-            
         let endpoint = "account/full_register/"
         
-        apiService.postWithBearerToken(endpoint: endpoint, parameters: parameters, bearerToken: accessToken) { [weak self] (result) in
+        let parameters: [String: Any] = [
+            "first_name": first_name,
+            "last_name": last_name,
+            "birthday": birthday,
+            "phone_number": phone_number,
+            "photo": photo
+        ]
+        
+        apiService.postWithBearerToken(endpoint: endpoint, parameters: parameters, bearerToken: AuthManager.shared.accessToken ?? "") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -56,9 +48,8 @@ class NumberViewModel: NumberProtocol {
                     self?.isRegistered = true
                     self?.registerResult?(.success(data))
                 case .failure(let error):
-                    let errorMessage = "Failed register number: \(error.localizedDescription)"
+                    let errorMessage = "Failed to register number: \(error.localizedDescription)"
                     print(errorMessage)
-//                    print("Failed register number")
                     self?.isRegistered = false
                     self?.registerResult?(.failure(error))
                 }

@@ -67,3 +67,19 @@ struct TokenResponse: Codable {
     let access: String
     let refresh: String
 }
+
+struct Product: Codable {
+    let images: [Data]
+    let title: String
+    let price: String
+    let shortDescription: String?
+    let fullDescription: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case images
+        case title
+        case price
+        case shortDescription = "short_description"
+        case fullDescription = "full_description"
+    }
+}

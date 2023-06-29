@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 import Alamofire
+import AlamofireImage
 
 class ProfileViewController: UIViewController {
     
     let mainView = ProfileView()
     var nickName: String = ""
+    var image: UIImage?
     var getUserProtocol: GetUserProtocol!
     
     init(getUserProtocol: GetUserProtocol!) {
@@ -65,6 +67,26 @@ class ProfileViewController: UIViewController {
                 self.mainView.nickLabel.text = username
             }
         }
+        
+        if let photoURLString = userData["photo"] as? String,
+           let photoURL = URL(string: "http://16.16.200.195/" + photoURLString) {
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: photoURL),
+                   let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        self.mainView.profilePic.image = image
+                    }
+                } else {
+                    print("Failed to load image from URL:", photoURL)
+                }
+            }
+
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     func checkFullRegister() {

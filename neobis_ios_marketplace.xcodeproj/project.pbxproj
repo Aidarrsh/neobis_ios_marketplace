@@ -57,6 +57,14 @@
 		1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D5E2A483710000A41F7 /* Data+Extensions.swift */; };
 		1C315D622A484183000A41F7 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D612A484183000A41F7 /* OTPViewController.swift */; };
 		1C315D652A4841B5000A41F7 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D642A4841B5000A41F7 /* OTPView.swift */; };
+		1C315D682A4AD47B000A41F7 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1C315D672A4AD47B000A41F7 /* AlamofireImage */; };
+		1C315D6B2A4AE4EB000A41F7 /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D6A2A4AE4EB000A41F7 /* LikedView.swift */; };
+		1C315D6E2A4AE9D6000A41F7 /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D6D2A4AE9D6000A41F7 /* LikedViewController.swift */; };
+		1C315D712A4AEC72000A41F7 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D702A4AEC72000A41F7 /* ProductView.swift */; };
+		1C315D732A4AEC8F000A41F7 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D722A4AEC8F000A41F7 /* ProductViewController.swift */; };
+		1C315D772A4AEE53000A41F7 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D762A4AEE53000A41F7 /* AddProductViewController.swift */; };
+		1C315D792A4AEE7C000A41F7 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D782A4AEE7C000A41F7 /* AddProductView.swift */; };
+		1C315D7B2A4C276A000A41F7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C315D7A2A4C276A000A41F7 /* CustomCell.swift */; };
 		1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */; };
 		1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650012A3EECC800A36DF4 /* ProfileView.swift */; };
 		1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */; };
@@ -66,6 +74,9 @@
 		1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66500D2A40643A00A36DF4 /* FinishRegView.swift */; };
 		1C6650112A419A0700A36DF4 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650102A419A0700A36DF4 /* NumberViewController.swift */; };
 		1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6650122A419A4C00A36DF4 /* NumberView.swift */; };
+		1C6C58F02A4C46AD00EC17CE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C58EF2A4C46AD00EC17CE /* String+Extensions.swift */; };
+		1C6C58F22A4D6B9600EC17CE /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C58F12A4D6B9600EC17CE /* AddProductViewModel.swift */; };
+		1C6C58F42A4D7AFA00EC17CE /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C58F32A4D7AFA00EC17CE /* ProductCellView.swift */; };
 		1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44D92A41ACDC00E3EBEA /* Models.swift */; };
 		1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DC2A41AEC500E3EBEA /* Service.swift */; };
 		1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */; };
@@ -123,6 +134,13 @@
 		1C315D5E2A483710000A41F7 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		1C315D612A484183000A41F7 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1C315D642A4841B5000A41F7 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		1C315D6A2A4AE4EB000A41F7 /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
+		1C315D6D2A4AE9D6000A41F7 /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
+		1C315D702A4AEC72000A41F7 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		1C315D722A4AEC8F000A41F7 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		1C315D762A4AEE53000A41F7 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		1C315D782A4AEE7C000A41F7 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		1C315D7A2A4C276A000A41F7 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1C664FFF2A3EECBF00A36DF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C6650012A3EECC800A36DF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1C6650032A3EF49500A36DF4 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -132,6 +150,9 @@
 		1C66500D2A40643A00A36DF4 /* FinishRegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegView.swift; sourceTree = "<group>"; };
 		1C6650102A419A0700A36DF4 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		1C6650122A419A4C00A36DF4 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		1C6C58EF2A4C46AD00EC17CE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		1C6C58F12A4D6B9600EC17CE /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
+		1C6C58F32A4D7AFA00EC17CE /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
 		1CAF44D92A41ACDC00E3EBEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1CAF44DC2A41AEC500E3EBEA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +166,7 @@
 			files = (
 				1C0EA8472A38AFB500E06092 /* SnapKit in Frameworks */,
 				1C315D522A45AB47000A41F7 /* Alamofire in Frameworks */,
+				1C315D682A4AD47B000A41F7 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +212,6 @@
 		1C0EA8422A38AF7200E06092 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1C315D602A484175000A41F7 /* OTP */,
 				1C0EA8432A38AF7D00E06092 /* SplashScreen */,
 				1C0EA8442A38AF9200E06092 /* Login */,
 				1C0EA8B42A3AFD2200E06092 /* Registration */,
@@ -198,8 +219,10 @@
 				1C664FFD2A3EEC9E00A36DF4 /* Profile */,
 				1C66500A2A40641800A36DF4 /* FinishRegistration */,
 				1C66500F2A4199C700A36DF4 /* AddNumber */,
+				1C315D602A484175000A41F7 /* OTP */,
 				1C315D5B2A470527000A41F7 /* LikeScreen */,
-				1C315D5C2A470533000A41F7 /* ProductScreen */,
+				1C315D5C2A470533000A41F7 /* Product */,
+				1C315D742A4AEE17000A41F7 /* AddProduct */,
 				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
 			path = Views;
@@ -339,21 +362,25 @@
 		1C315D5B2A470527000A41F7 /* LikeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D692A4AE415000A41F7 /* Liked */,
 			);
 			path = LikeScreen;
 			sourceTree = "<group>";
 		};
-		1C315D5C2A470533000A41F7 /* ProductScreen */ = {
+		1C315D5C2A470533000A41F7 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				1C315D6F2A4AEC67000A41F7 /* Views */,
+				1C315D722A4AEC8F000A41F7 /* ProductViewController.swift */,
 			);
-			path = ProductScreen;
+			path = Product;
 			sourceTree = "<group>";
 		};
 		1C315D5D2A4836FB000A41F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1C315D5E2A483710000A41F7 /* Data+Extensions.swift */,
+				1C6C58EF2A4C46AD00EC17CE /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +398,51 @@
 			isa = PBXGroup;
 			children = (
 				1C315D642A4841B5000A41F7 /* OTPView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D692A4AE415000A41F7 /* Liked */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D6C2A4AE9C9000A41F7 /* Views */,
+				1C315D6D2A4AE9D6000A41F7 /* LikedViewController.swift */,
+			);
+			path = Liked;
+			sourceTree = "<group>";
+		};
+		1C315D6C2A4AE9C9000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D6A2A4AE4EB000A41F7 /* LikedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D6F2A4AEC67000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D702A4AEC72000A41F7 /* ProductView.swift */,
+				1C6C58F32A4D7AFA00EC17CE /* ProductCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C315D742A4AEE17000A41F7 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D752A4AEE40000A41F7 /* Views */,
+				1C315D762A4AEE53000A41F7 /* AddProductViewController.swift */,
+				1C6C58F12A4D6B9600EC17CE /* AddProductViewModel.swift */,
+			);
+			path = AddProduct;
+			sourceTree = "<group>";
+		};
+		1C315D752A4AEE40000A41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C315D782A4AEE7C000A41F7 /* AddProductView.swift */,
+				1C315D7A2A4C276A000A41F7 /* CustomCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,6 +519,7 @@
 			packageProductDependencies = (
 				1C0EA8462A38AFB500E06092 /* SnapKit */,
 				1C315D512A45AB47000A41F7 /* Alamofire */,
+				1C315D672A4AD47B000A41F7 /* AlamofireImage */,
 			);
 			productName = neobis_ios_marketplace;
 			productReference = 1C0EA82B2A38AF1300E06092 /* neobis_ios_marketplace.app */;
@@ -479,6 +552,7 @@
 			packageReferences = (
 				1C0EA8452A38AFB500E06092 /* XCRemoteSwiftPackageReference "Snapkit" */,
 				1C315D502A45AB47000A41F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1C315D662A4AD47B000A41F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 1C0EA82C2A38AF1300E06092 /* Products */;
 			projectDirPath = "";
@@ -538,30 +612,40 @@
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
 				1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
+				1C315D7B2A4C276A000A41F7 /* CustomCell.swift in Sources */,
+				1C6C58F42A4D7AFA00EC17CE /* ProductCellView.swift in Sources */,
 				1C315D582A46D4B5000A41F7 /* GetUserData.swift in Sources */,
+				1C315D732A4AEC8F000A41F7 /* ProductViewController.swift in Sources */,
 				1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */,
 				1C315D552A45B802000A41F7 /* NumberViewModel.swift in Sources */,
 				1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */,
+				1C315D712A4AEC72000A41F7 /* ProductView.swift in Sources */,
 				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
 				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
 				1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */,
+				1C315D792A4AEE7C000A41F7 /* AddProductView.swift in Sources */,
 				1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */,
 				1C315D622A484183000A41F7 /* OTPViewController.swift in Sources */,
 				1C0EA8BB2A3B064600E06092 /* PasswordViewController.swift in Sources */,
 				1C0EA8332A38AF1300E06092 /* LoginViewController.swift in Sources */,
+				1C315D6B2A4AE4EB000A41F7 /* LikedView.swift in Sources */,
 				1C6650112A419A0700A36DF4 /* NumberViewController.swift in Sources */,
 				1C66500E2A40643A00A36DF4 /* FinishRegView.swift in Sources */,
 				1C0EA82F2A38AF1300E06092 /* AppDelegate.swift in Sources */,
 				1C6650132A419A4C00A36DF4 /* NumberView.swift in Sources */,
 				1C315D472A4438BF000A41F7 /* PasswordViewModel.swift in Sources */,
+				1C315D772A4AEE53000A41F7 /* AddProductViewController.swift in Sources */,
 				1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */,
 				1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */,
+				1C6C58F22A4D6B9600EC17CE /* AddProductViewModel.swift in Sources */,
 				1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */,
 				1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */,
 				1C6650022A3EECC800A36DF4 /* ProfileView.swift in Sources */,
 				1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */,
 				1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */,
+				1C6C58F02A4C46AD00EC17CE /* String+Extensions.swift in Sources */,
 				1C315D652A4841B5000A41F7 /* OTPView.swift in Sources */,
+				1C315D6E2A4AE9D6000A41F7 /* LikedViewController.swift in Sources */,
 				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
 				1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */,
 				1C315D4F2A45A94C000A41F7 /* AuthManager.swift in Sources */,
@@ -790,6 +874,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1C315D662A4AD47B000A41F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -802,6 +894,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1C315D502A45AB47000A41F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1C315D672A4AD47B000A41F7 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C315D662A4AD47B000A41F7 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

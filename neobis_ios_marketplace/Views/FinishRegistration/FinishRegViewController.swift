@@ -62,6 +62,22 @@ class FinishRegViewController: UIViewController {
     }
 
     func parseUserData(_ userData: [String: Any]) {
+        
+        if let photoURLString = userData["photo"] as? String,
+           let photoURL = URL(string: "http://16.16.200.195/" + photoURLString) {
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: photoURL),
+                   let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        self.mainView.profilePic.image = image
+                    }
+                } else {
+                    print("Failed to load image from URL:", photoURL)
+                }
+            }
+
+        }
+        
         if let firstName = userData["first_name"] as? String {
             self.firstName = firstName
             DispatchQueue.main.async {
@@ -112,90 +128,18 @@ class FinishRegViewController: UIViewController {
         guard let last_name = mainView.lastNameField.text else { return }
         guard let birthday = mainView.birthdayField.text else { return }
         guard let image = mainView.profilePic.image else { return }
-
-        if let imageURL = saveImageLocally(image)?.absoluteString {
-            print(imageURL)
-            let vc = NumberViewController(numberProtocol: NumberViewModel(
-                first_name: first_name,
-                last_name: last_name,
-                birthday: birthday,
-                photo: imageURL
-            ))
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-
-    func saveImageLocally(_ image: UIImage) -> URL? {
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return nil
-        }
         
-        let fileURL = documentsDirectory.appendingPathComponent("profile_image.jpg")
-        if let imageData = image.jpegData(compressionQuality: 1.0) {
-            do {
-                try imageData.write(to: fileURL)
-                return fileURL
-            } catch {
-                print("Failed to save image locally:", error)
-                return nil
-            }
-        }
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
         
-        return nil
+        let vc = NumberViewController(numberProtocol: NumberViewModel(
+            first_name: first_name,
+            last_name: last_name,
+            birthday: birthday,
+            photo: imageData
+        ))
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
-
-
-    func imageToBase64URI(_ image: UIImage) -> String? {
-        if let imageData = image.jpegData(compressionQuality: 0.8) {
-            let base64String = imageData.base64EncodedString()
-            let photoURI = "data:image/jpeg;base64," + base64String
-            return photoURI
-        }
-        return nil
-    }
-
-    
-//    func multipartFormDataBody(_ boundary: String, _ fromName: String, _ image: UIImage) -> Data {
-//
-//        let lineBreak = "\r\n"
-//        var body = Data()
-//
-//        body.append("--\(boundary + lineBreak)")
-//        body.append("Content-Disposition: form-data; name=\"formName\"\(lineBreak + lineBreak)")
-//        body.append("\(fromName + lineBreak)")
-//
-//        if let uuid = UUID() .uuidString.components(separatedBy: "-").first {
-//
-//            body.append("--\(boundary + lineBreak)")
-//            body.append("Content-Disposition: form-data; name=\"imageUploads\"; filename=\"\(uuid).jpg\"\(lineBreak)")
-//            body.append("Content-Type: image/jpeg\(lineBreak + lineBreak)")
-//            body.append(image.jpegData(compressionQuality: 0.99)!)
-//            body.append(lineBreak)
-//        }
-//
-//        body.append("--\(boundary)--\(lineBreak)")
-//
-//        return body
-//    }
-//
-//
-//    @objc func numberPressed() {
-//        guard let first_name = mainView.nameField.text else { return }
-//        guard let last_name = mainView.lastNameField.text else { return }
-//        guard let birthday = mainView.birthdayField.text else { return }
-//        guard let image = mainView.profilePic.image else { return }
-//
-//        if let imageData = createMultipartFormData(withImage: image, forKey: "photo") {
-//            let vc = NumberViewController(numberProtocol: NumberViewModel(
-//                first_name: first_name,
-//                last_name: last_name,
-//                birthday: birthday,
-//                photo: imageData
-//            ))
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
-
 
     
     @objc func setPic() {
