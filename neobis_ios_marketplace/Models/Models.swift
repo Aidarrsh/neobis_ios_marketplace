@@ -75,11 +75,18 @@ struct Product: Codable {
     let shortDescription: String?
     let fullDescription: String?
     
-    private enum CodingKeys: String, CodingKey {
-        case images
-        case title
-        case price
-        case shortDescription = "short_description"
-        case fullDescription = "full_description"
+}
+
+struct GetProduct: Codable {
+    let id: Int
+    let user: String
+    let images: [String]
+    let title: String
+    let price: String
+    let likes: Int
+    let isFan: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case id, user, images, title, price, likes, isFan
     }
 }

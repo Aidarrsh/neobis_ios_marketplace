@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import Alamofire
 
 class APIService {
@@ -84,6 +85,69 @@ class APIService {
         }
     }
     
+    func postImagesWithBearerToken(endpoint: String, parameters: [String: Any], imageDatas: [Data], bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        let url = baseURL + endpoint
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let mimeType = "image/*"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(bearerToken)",
+            "Content-Type": "multipart/form-data; boundary=\(boundary)"
+        ]
+        
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                // Add parameters
+                for (key, value) in parameters {
+                    if let stringValue = "\(value)".data(using: .utf8) {
+                        multipartFormData.append(stringValue, withName: key)
+                    }
+                }
+                
+                // Add images
+                for (index, imageData) in imageDatas.enumerated() {
+                    let fileName = "image\(index).jpeg"
+                    let fieldName = "images"
+                    
+                    multipartFormData.append(imageData, withName: fieldName, fileName: fileName, mimeType: mimeType)
+                }
+            },
+            to: url,
+            method: .post,
+            headers: headers
+        )
+        .response { response in
+            switch response.result {
+            case .success(let data):
+                if let data = data {
+                    completion(.success(data))
+                } else {
+                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Empty response data"])
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchProductData(headers: HTTPHeaders, completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+        AF.request("http://16.16.200.195/api/v1/product/", headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let dataArray = value as? [[String: Any]] {
+                    completion(.success(dataArray))
+                } else {
+                    let error = NSError(domain: "ProductDataParsingError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to parse product data"])
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    
     func getWithBearerToken(endpoint: String, bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let url = URL(string: "http://16.16.200.195/api/v1/" + endpoint)!
         var request = URLRequest(url: url)
@@ -99,5 +163,12 @@ class APIService {
             }
         }
     }
-    
+}
+
+extension NSMutableData {
+    func appendString(_ string: String) {
+        if let data = string.data(using: .utf8) {
+            append(data)
+        }
+    }
 }

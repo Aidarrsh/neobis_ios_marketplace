@@ -44,13 +44,8 @@ class ProfileViewController: UIViewController {
     }
     
     func getUserData() {
-        guard let accessToken = AuthManager.shared.accessToken else {
-            return
-        }
         
-        print(accessToken)
-        
-        getUserProtocol.fetchUserData(accessToken: accessToken) { [weak self] result in
+        getUserProtocol.fetchUserData() { [weak self] result in
             switch result {
             case .success(let userData):
                 self?.parseUserData(userData)
@@ -94,7 +89,7 @@ class ProfileViewController: UIViewController {
             return
         }
 
-        getUserProtocol.fetchUserData(accessToken: accessToken) { [weak self] result in
+        getUserProtocol.fetchUserData() { [weak self] result in
             switch result {
             case .success(let userData):
                 if let phoneNumber = userData["phone_number"] as? String {

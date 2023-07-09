@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol GetUserProtocol {
-    func fetchUserData(accessToken: String, completion: @escaping (Result<[String: Any], Error>) -> Void)
+    func fetchUserData(completion: @escaping (Result<[String: Any], Error>) -> Void)
 }
 
 class GetUserViewModel: GetUserProtocol {
@@ -20,7 +20,11 @@ class GetUserViewModel: GetUserProtocol {
         self.apiService = APIService()
     }
     
-    func fetchUserData(accessToken: String, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func fetchUserData(completion: @escaping (Result<[String: Any], Error>) -> Void) {
+        guard let accessToken = AuthManager.shared.accessToken else {
+            return
+        }
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(accessToken)"
         ]

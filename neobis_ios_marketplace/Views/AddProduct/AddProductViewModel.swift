@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AddProductViewModelProtocol: AnyObject {
     var isAdded: Bool { get }
     var addResult: ((Result<Data, Error>) -> Void)? { get set }
     
-    func addProduct(images: [Data], title: String, price: String, shortDescription: String?, fullDescription: String?)
+    func addProduct(images: [UIImage], title: String, price: String, shortDescription: String?, fullDescription: String?)
 }
 
 class AddProductViewModel: AddProductViewModelProtocol {
@@ -25,18 +26,20 @@ class AddProductViewModel: AddProductViewModelProtocol {
         self.apiService = APIService()
     }
     
-    func addProduct(images: [Data], title: String, price: String, shortDescription: String?, fullDescription: String?) {
+    func addProduct(images: [UIImage], title: String, price: String, shortDescription: String?, fullDescription: String?) {
+        let imageDatas = images.compactMap { $0.jpegData(compressionQuality: 1.0) }
+        
         let endpoint = "product/"
         
         let parameters: [String: Any] = [
-            "images": images,
+//            "images": images,
             "title": title,
             "price": price,
             "short_description": shortDescription ?? "",
             "full_description": fullDescription ?? ""
         ]
         
-        apiService.postWithBearerToken(endpoint: endpoint, parameters: parameters, bearerToken: AuthManager.shared.accessToken ?? "") { [weak self] result in
+        apiService.postImagesWithBearerToken(endpoint: endpoint, parameters: parameters, imageDatas: imageDatas, bearerToken: AuthManager.shared.accessToken ?? "") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -53,4 +56,5 @@ class AddProductViewModel: AddProductViewModelProtocol {
             }
         }
     }
+
 }

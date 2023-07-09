@@ -19,18 +19,42 @@ class ProductCellView: UICollectionViewCell {
     
     let productNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = UIFont(name: "GothamPro-Medium", size: 14)
         label.textColor = .black
-        label.text = "Product"
+        label.text = "BMW M4 Coupe: A Two-Door"
+        label.numberOfLines = 0
         return label
     }()
     
     let priceLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = UIFont(name: "GothamPro-Medium", size: 14)
+        label.textColor = UIColor(red: 0.365, green: 0.373, blue: 0.937, alpha: 1)
         label.text = "12000"
         return label
+    }()
+    
+    let likeImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "heart")
+        
+        return image
+    }()
+    
+    let likeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "100"
+        label.font = UIFont(name: "GothamPro", size: 12)
+        label.textColor = .gray
+        
+        return label
+    }()
+    
+    let infoButton: UIButton  = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "info"), for: .normal)
+        
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -49,6 +73,9 @@ class ProductCellView: UICollectionViewCell {
         addSubview(productImageView)
         addSubview(productNameLabel)
         addSubview(priceLabel)
+        addSubview(likeImage)
+        addSubview(likeLabel)
+        addSubview(infoButton)
     }
     
     func setupConstraints() {
@@ -60,13 +87,36 @@ class ProductCellView: UICollectionViewCell {
         }
         
         productNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(productImageView.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(95 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(6 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalToSuperview().inset(6 * UIScreen.main.bounds.width / 375)
+            make.bottom.equalToSuperview().inset(55 * UIScreen.main.bounds.height / 812)
         }
         
         priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(productNameLabel.snp.bottom).offset(4)
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(133 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(6 * UIScreen.main.bounds.width / 375)
+            make.trailing.equalToSuperview().inset(13 * UIScreen.main.bounds.width / 375)
+            make.bottom.equalToSuperview().inset(34 * UIScreen.main.bounds.height / 812)
+        }
+        
+        likeImage.snp.makeConstraints{ make in
+            make.top.equalToSuperview().inset(157.41 * UIScreen.main.bounds.height / 812)
+            make.leading.equalToSuperview().inset(8 * UIScreen.main.bounds.width / 375)
+//            make.trailing.equalToSuperview().inset(133 * UIScreen.main.bounds.width / 375)
+//            make.bottom.equalToSuperview().inset(9.41 * UIScreen.main.bounds.height / 812)
+            make.width.equalTo(20 * UIScreen.main.bounds.width / 375)
+            make.height.equalTo(20 * UIScreen.main.bounds.height / 812)
+        }
+        
+        likeLabel.snp.makeConstraints{ make in
+            make.centerY.equalTo(likeImage)
+            make.leading.equalTo(likeImage.snp.trailing).offset(7 * UIScreen.main.bounds.width / 375)
+        }
+        
+        infoButton.snp.makeConstraints{ make in
+            make.centerY.equalTo(likeImage)
+            make.trailing.equalToSuperview().inset(6 * UIScreen.main.bounds.width / 375)
         }
     }
 }

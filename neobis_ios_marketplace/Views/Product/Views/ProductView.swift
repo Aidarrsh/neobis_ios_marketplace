@@ -11,6 +11,8 @@ import SnapKit
 
 class ProductView: UIView {
     
+    var products: [[String: Any]] = []
+    
     let boxImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "Artwork")
@@ -88,23 +90,53 @@ class ProductView: UIView {
             make.bottom.equalToSuperview()
         }
     }
+    
+    func updateView(with products: [[String: Any]]) {
+        self.products = products
+        if products.isEmpty {
+            emptyLabel.isHidden = false
+            collectionView.isHidden = true
+        } else {
+            emptyLabel.isHidden = true
+            collectionView.isHidden = false
+            
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension ProductView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Return the number of items in the collectionView
-        return 4 // Replace with your actual data count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // Dequeue a reusable cell of type ProductCellView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCellView
         
-        // Configure the cell with your data
-        // For example:
-        // cell.productImageView.image = ...
-        // cell.productNameLabel.text = ...
-        // cell.priceLabel.text = ...
+        let product = products[indexPath.item]
+        
+        if let title = product["title"] as? String {
+            cell.productNameLabel.text = title
+        }
+        
+        if let price = product["price"] as? String {
+            cell.priceLabel.text = price
+        }
+        
+        if let images = product["images"] as? [String], let imageURLString = images.first, let imageURL = URL(string: imageURLString) {
+            URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell.productImageView.image = image
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        cell.productImageView.image = UIImage(named: "defaultImage")
+                    }
+                }
+            }.resume()
+        }
+
         
         return cell
     }
