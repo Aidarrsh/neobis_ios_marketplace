@@ -37,6 +37,7 @@ class ProfileViewController: UIViewController {
         
         mainView.finishbutton.addTarget(self, action: #selector(finishRegPressed), for: .touchUpInside)
         mainView.exitButton.addTarget(self, action: #selector(exitButtonPressed), for: .touchUpInside)
+        mainView.productButton.addTarget(self, action: #selector(productButtonPressed), for: .touchUpInside)
         
         getUserData()
         checkFullRegister()
@@ -102,6 +103,12 @@ class ProfileViewController: UIViewController {
                 print("Failed to fetch user data:", error)
             }
         }
+    }
+    
+    @objc func productButtonPressed() {
+        let vc = ProductViewController(getProduct: GetProductViewModel(), getUserProtocol: GetUserViewModel())
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func finishRegPressed() {

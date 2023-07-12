@@ -13,9 +13,12 @@ class ProductViewController: UIViewController {
     
     let containView = ProductView()
     var getProduct: GetProductProtocol!
+    var getUserProtocol: GetUserProtocol!
+    var user: String = ""
     
-    init(getProduct: GetProductProtocol!) {
+    init(getProduct: GetProductProtocol!, getUserProtocol: GetUserProtocol!) {
         self.getProduct = getProduct
+        self.getUserProtocol = getUserProtocol
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,6 +35,18 @@ class ProductViewController: UIViewController {
         
         setupView()
         getProductData()
+        getUserData()
+    }
+    
+    func getUserData() {
+        getUserProtocol.fetchUserData() { [weak self] result in
+            switch result {
+            case .success(let userData):
+                self!.user = userData["email"] as! String
+            case .failure(let error):
+                print("Failed to fetch user data:", error)
+            }
+        }
     }
     
     func getProductData() {
@@ -49,27 +64,28 @@ class ProductViewController: UIViewController {
     func parseProductData(productData: [[String: Any]]) {
         var products: [[String: Any]] = []
         for data in productData {
-            if let id = data["id"] as? Int,
-               let user = data["user"] as? String,
-               let images = data["images"] as? [String],
-               let title = data["title"] as? String,
-               let price = data["price"] as? String,
-               let likes = data["likes"] as? Int,
-               let isFan = data["is_fan"] as? Bool {
-                let product: [String: Any] = [
-                    "id": id,
-                    "user": user,
-                    "images": images,
-                    "title": title,
-                    "price": price,
-                    "likes": likes,
-                    "isFan": isFan
-                ]
-                products.append(product)
+            if data["user"] as? String == user{
+                if let id = data["id"] as? Int,
+                   let user = data["user"] as? String,
+                   let images = data["images"] as? [String],
+                   let title = data["title"] as? String,
+                   let price = data["price"] as? String,
+                   let likes = data["likes"] as? Int,
+                   let isFan = data["is_fan"] as? Bool {
+                    let product: [String: Any] = [
+                        "id": id,
+                        "user": user,
+                        "images": images,
+                        "title": title,
+                        "price": price,
+                        "likes": likes,
+                        "isFan": isFan
+                    ]
+                    products.append(product)
+                }
             }
         }
         
-        // Update your collection view with the parsed products
         containView.updateView(with: products)
     }
 

@@ -13,7 +13,6 @@ class ProductCellView: UICollectionViewCell {
     let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "bmw")
         return imageView
     }()
     
@@ -50,9 +49,11 @@ class ProductCellView: UICollectionViewCell {
         return label
     }()
     
-    let infoButton: UIButton  = {
+    let infoButton: UIButton  = { // show pop up
         let button = UIButton()
         button.setImage(UIImage(named: "info"), for: .normal)
+        
+        
         
         return button
     }()

@@ -82,6 +82,8 @@
 		1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DC2A41AEC500E3EBEA /* Service.swift */; };
 		1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */; };
 		1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD323302A42FE3F00A3985C /* BorderedTextField.swift */; };
+		1CEEC0D52A5AA0420000EBAF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEC0D42A5AA0420000EBAF /* MainView.swift */; };
+		1CEEC0D72A5AA06C0000EBAF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEC0D62A5AA06C0000EBAF /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +161,8 @@
 		1CAF44DC2A41AEC500E3EBEA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1CD323302A42FE3F00A3985C /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		1CEEC0D42A5AA0420000EBAF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1CEEC0D62A5AA06C0000EBAF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +198,7 @@
 		1C0EA82D2A38AF1300E06092 /* neobis_ios_marketplace */ = {
 			isa = PBXGroup;
 			children = (
-				1C0EA8422A38AF7200E06092 /* Views */,
+				1C0EA8422A38AF7200E06092 /* Screens */,
 				1C315D5D2A4836FB000A41F7 /* Extensions */,
 				1C315D562A46D4A2000A41F7 /* GetUserData */,
 				1C315D4D2A45A8DD000A41F7 /* AuthManager */,
@@ -211,9 +215,10 @@
 			path = neobis_ios_marketplace;
 			sourceTree = "<group>";
 		};
-		1C0EA8422A38AF7200E06092 /* Views */ = {
+		1C0EA8422A38AF7200E06092 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1CEEC0D22A5AA01A0000EBAF /* MainScreen */,
 				1C0EA8432A38AF7D00E06092 /* SplashScreen */,
 				1C0EA8442A38AF9200E06092 /* Login */,
 				1C0EA8B42A3AFD2200E06092 /* Registration */,
@@ -227,7 +232,7 @@
 				1C315D742A4AEE17000A41F7 /* AddProduct */,
 				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		1C0EA8432A38AF7D00E06092 /* SplashScreen */ = {
@@ -503,6 +508,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		1CEEC0D22A5AA01A0000EBAF /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1CEEC0D32A5AA0380000EBAF /* Views */,
+				1CEEC0D62A5AA06C0000EBAF /* MainViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		1CEEC0D32A5AA0380000EBAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1CEEC0D42A5AA0420000EBAF /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -613,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
+				1CEEC0D52A5AA0420000EBAF /* MainView.swift in Sources */,
 				1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */,
 				1C9317E12A55534F001C1C4B /* ProductViewModel.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
@@ -622,6 +645,7 @@
 				1C315D732A4AEC8F000A41F7 /* ProductViewController.swift in Sources */,
 				1C315D492A444BB2000A41F7 /* NumberTextField.swift in Sources */,
 				1C315D552A45B802000A41F7 /* NumberViewModel.swift in Sources */,
+				1CEEC0D72A5AA06C0000EBAF /* MainViewController.swift in Sources */,
 				1C0EA8B62A3AFD9400E06092 /* RegistrationViewController.swift in Sources */,
 				1C315D712A4AEC72000A41F7 /* ProductView.swift in Sources */,
 				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
