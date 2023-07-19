@@ -89,7 +89,9 @@ class ProfileViewController: UIViewController {
         guard let accessToken = AuthManager.shared.accessToken else {
             return
         }
-
+        
+        print(accessToken)
+        
         getUserProtocol.fetchUserData() { [weak self] result in
             switch result {
             case .success(let userData):
@@ -106,9 +108,12 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func productButtonPressed() {
-        let vc = ProductViewController(getProduct: GetProductViewModel(), getUserProtocol: GetUserViewModel())
+        let vc = ProductViewController(Product: ProductViewModel(), productProtocol: GetUserViewModel())
         
-        navigationController?.pushViewController(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
     
     @objc func finishRegPressed() {

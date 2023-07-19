@@ -12,9 +12,9 @@ import SnapKit
 class MainViewController: UIViewController {
     
     let contentView = MainView()
-    var getProduct: GetProductProtocol!
+    var getProduct: ProductProtocol!
     
-    init(getProduct: GetProductProtocol!) {
+    init(getProduct: ProductProtocol!) {
         self.getProduct = getProduct
         super.init(nibName: nil, bundle: nil)
     }
@@ -65,7 +65,6 @@ class MainViewController: UIViewController {
             }
         }
         
-        // Update your collection view with the parsed products
         contentView.updateView(with: products)
     }
     

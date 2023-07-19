@@ -53,7 +53,7 @@ class ProductCellView: UICollectionViewCell {
         let button = UIButton()
         button.setImage(UIImage(named: "info"), for: .normal)
         
-        
+//        button.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
         
         return button
     }()

@@ -8,12 +8,18 @@
 import Foundation
 import Alamofire
 
-protocol GetProductProtocol {
+protocol ProductProtocol {
     func fetchProductData(completion: @escaping (Result<[[String: Any]], Error>) -> Void)
+    
+    var isDeleted: Bool { get }
+    var deleteResult: ((Result<Data, Error>) -> Void)? { get set }
+    func deleteProduct(withID: Int)
 }
 
-class GetProductViewModel: GetProductProtocol {
+class ProductViewModel: ProductProtocol {
     
+    var isDeleted: Bool = false
+    var deleteResult: ((Result<Data, Error>) -> Void)?
     let apiService: APIService
     
     init() {
@@ -46,5 +52,24 @@ class GetProductViewModel: GetProductProtocol {
             }
         }
     }
-
+    
+    func deleteProduct(withID id: Int) {
+        
+        apiService.deleteData(id: id, bearerToken: AuthManager.shared.accessToken ?? "") { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    let dataString = String(data: data, encoding: .utf8)
+                    print("Data received: \(dataString ?? "nil")")
+                    self?.isDeleted = true
+                    self?.deleteResult?(.success(data))
+                case .failure(let error):
+                    let errorMessage = "Failed to delete product: \(error.localizedDescription)"
+                    print(errorMessage)
+                    self?.isDeleted = false
+                    self?.deleteResult?(.failure(error))
+                }
+            }
+        }
+    }
 }

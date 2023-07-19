@@ -97,14 +97,12 @@ class APIService {
         
         AF.upload(
             multipartFormData: { multipartFormData in
-                // Add parameters
                 for (key, value) in parameters {
                     if let stringValue = "\(value)".data(using: .utf8) {
                         multipartFormData.append(stringValue, withName: key)
                     }
                 }
                 
-                // Add images
                 for (index, imageData) in imageDatas.enumerated() {
                     let fileName = "image\(index).jpeg"
                     let fieldName = "images"
@@ -130,6 +128,51 @@ class APIService {
             }
         }
     }
+    
+    func putImagesWithBearerToken(endpoint: String, parameters: [String: Any], imageDatas: [Data], bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        let url = baseURL + endpoint
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let mimeType = "image/*"
+
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(bearerToken)",
+            "Content-Type": "multipart/form-data; boundary=\(boundary)"
+        ]
+
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                for (key, value) in parameters {
+                    if let stringValue = "\(value)".data(using: .utf8) {
+                        multipartFormData.append(stringValue, withName: key)
+                    }
+                }
+
+                for (index, imageData) in imageDatas.enumerated() {
+                    let fileName = "image\(index).jpeg"
+                    let fieldName = "images"
+
+                    multipartFormData.append(imageData, withName: fieldName, fileName: fileName, mimeType: mimeType)
+                }
+            },
+            to: url,
+            method: .put,
+            headers: headers
+        )
+        .response { response in
+            switch response.result {
+            case .success(let data):
+                if let data = data {
+                    completion(.success(data))
+                } else {
+                    let error = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Empty response data"])
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
     
     func fetchProductData(headers: HTTPHeaders, completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
         AF.request("http://16.16.200.195/api/v1/product/", headers: headers).responseJSON { response in
@@ -163,6 +206,32 @@ class APIService {
             }
         }
     }
+    
+    func deleteData(id: Int, bearerToken: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        let endpoint = "product/\(id)/"
+        let url = baseURL + endpoint
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(bearerToken)"
+        ]
+        
+        AF.request(url, method: .delete, headers: headers)
+            .validate(statusCode: 200..<400)
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    if let data = data {
+                        completion(.success(data))
+                        print("Delete success")
+                    } else {
+                        print("Delete successfull")
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }
 
 extension NSMutableData {

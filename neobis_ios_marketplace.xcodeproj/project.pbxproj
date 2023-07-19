@@ -82,8 +82,12 @@
 		1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DC2A41AEC500E3EBEA /* Service.swift */; };
 		1CAF44E02A41AF7200E3EBEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */; };
 		1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD323302A42FE3F00A3985C /* BorderedTextField.swift */; };
+		1CD65F152A641ECD004B0956 /* ChangeProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD65F142A641ECD004B0956 /* ChangeProductView.swift */; };
+		1CD65F172A641F06004B0956 /* ChangeProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD65F162A641F06004B0956 /* ChangeProductViewController.swift */; };
+		1CD65F192A641F8B004B0956 /* ChangeProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD65F182A641F8B004B0956 /* ChangeProductViewModel.swift */; };
 		1CEEC0D52A5AA0420000EBAF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEC0D42A5AA0420000EBAF /* MainView.swift */; };
 		1CEEC0D72A5AA06C0000EBAF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEC0D62A5AA06C0000EBAF /* MainViewController.swift */; };
+		1CEEC0D92A6123FE0000EBAF /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEC0D82A6123FE0000EBAF /* PopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,8 +165,12 @@
 		1CAF44DC2A41AEC500E3EBEA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1CAF44DF2A41AF7200E3EBEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1CD323302A42FE3F00A3985C /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		1CD65F142A641ECD004B0956 /* ChangeProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProductView.swift; sourceTree = "<group>"; };
+		1CD65F162A641F06004B0956 /* ChangeProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProductViewController.swift; sourceTree = "<group>"; };
+		1CD65F182A641F8B004B0956 /* ChangeProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProductViewModel.swift; sourceTree = "<group>"; };
 		1CEEC0D42A5AA0420000EBAF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1CEEC0D62A5AA06C0000EBAF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1CEEC0D82A6123FE0000EBAF /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,7 @@
 				1C315D5B2A470527000A41F7 /* LikeScreen */,
 				1C315D5C2A470533000A41F7 /* Product */,
 				1C315D742A4AEE17000A41F7 /* AddProduct */,
+				1CD65F122A641E70004B0956 /* ChangeProduct */,
 				1C0EA84A2A38B38D00E06092 /* Fonts */,
 			);
 			path = Screens;
@@ -432,6 +441,7 @@
 			children = (
 				1C315D702A4AEC72000A41F7 /* ProductView.swift */,
 				1C6C58F32A4D7AFA00EC17CE /* ProductCellView.swift */,
+				1CEEC0D82A6123FE0000EBAF /* PopUp.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +516,24 @@
 				1CAF44DC2A41AEC500E3EBEA /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		1CD65F122A641E70004B0956 /* ChangeProduct */ = {
+			isa = PBXGroup;
+			children = (
+				1CD65F132A641EA9004B0956 /* Views */,
+				1CD65F162A641F06004B0956 /* ChangeProductViewController.swift */,
+				1CD65F182A641F8B004B0956 /* ChangeProductViewModel.swift */,
+			);
+			path = ChangeProduct;
+			sourceTree = "<group>";
+		};
+		1CD65F132A641EA9004B0956 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1CD65F142A641ECD004B0956 /* ChangeProductView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1CEEC0D22A5AA01A0000EBAF /* MainScreen */ = {
@@ -636,6 +664,7 @@
 			files = (
 				1C6650092A405F6700A36DF4 /* SpashViewController.swift in Sources */,
 				1CEEC0D52A5AA0420000EBAF /* MainView.swift in Sources */,
+				1CEEC0D92A6123FE0000EBAF /* PopUp.swift in Sources */,
 				1C315D5F2A483710000A41F7 /* Data+Extensions.swift in Sources */,
 				1C9317E12A55534F001C1C4B /* ProductViewModel.swift in Sources */,
 				1C66500C2A40643000A36DF4 /* FinishRegViewController.swift in Sources */,
@@ -651,6 +680,7 @@
 				1C0EA8BD2A3B064E00E06092 /* PasswordView.swift in Sources */,
 				1C6650002A3EECBF00A36DF4 /* ProfileViewController.swift in Sources */,
 				1CD323312A42FE3F00A3985C /* BorderedTextField.swift in Sources */,
+				1CD65F192A641F8B004B0956 /* ChangeProductViewModel.swift in Sources */,
 				1C315D792A4AEE7C000A41F7 /* AddProductView.swift in Sources */,
 				1C6650062A40446900A36DF4 /* CustomTabBar.swift in Sources */,
 				1C315D622A484183000A41F7 /* OTPViewController.swift in Sources */,
@@ -665,6 +695,7 @@
 				1C315D772A4AEE53000A41F7 /* AddProductViewController.swift in Sources */,
 				1C0EA8B82A3AFDAF00E06092 /* RegistrationView.swift in Sources */,
 				1C0EA8492A38AFCD00E06092 /* LoginView.swift in Sources */,
+				1CD65F172A641F06004B0956 /* ChangeProductViewController.swift in Sources */,
 				1C6C58F22A4D6B9600EC17CE /* AddProductViewModel.swift in Sources */,
 				1C0EA8312A38AF1300E06092 /* SceneDelegate.swift in Sources */,
 				1CAF44DA2A41ACDC00E3EBEA /* Models.swift in Sources */,
@@ -672,6 +703,7 @@
 				1CAF44DD2A41AEC500E3EBEA /* Service.swift in Sources */,
 				1C0EA86D2A38C96200E06092 /* AnimatedTextField.swift in Sources */,
 				1C6C58F02A4C46AD00EC17CE /* String+Extensions.swift in Sources */,
+				1CD65F152A641ECD004B0956 /* ChangeProductView.swift in Sources */,
 				1C315D652A4841B5000A41F7 /* OTPView.swift in Sources */,
 				1C315D6E2A4AE9D6000A41F7 /* LikedViewController.swift in Sources */,
 				1C6650042A3EF49500A36DF4 /* CustomTabBarController.swift in Sources */,
