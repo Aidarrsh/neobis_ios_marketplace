@@ -61,14 +61,14 @@ class LoginViewController: UIViewController {
     }
     
     func handleSuccessfulLogin(_ data: Data) {
-
+        
         let vc = CustomTabBarC()
         vc.modalPresentationStyle = .fullScreen
         
-//        if let viewControllers = vc.viewControllers {
-//            let lastIndex = viewControllers.count - 1
-//            vc.selectedIndex = lastIndex
-//        }
+        //        if let viewControllers = vc.viewControllers {
+        //            let lastIndex = viewControllers.count - 1
+        //            vc.selectedIndex = lastIndex
+        //        }
         
         present(vc, animated: true, completion: nil)
     }
@@ -97,5 +97,9 @@ class LoginViewController: UIViewController {
         mainView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    @objc func someFunction(){
+        // TODO add target to button
     }
 }

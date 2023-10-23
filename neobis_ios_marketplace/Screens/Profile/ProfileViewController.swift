@@ -45,7 +45,6 @@ class ProfileViewController: UIViewController {
     }
     
     func getUserData() {
-        
         getUserProtocol.fetchUserData() { [weak self] result in
             switch result {
             case .success(let userData):

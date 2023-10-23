@@ -185,6 +185,7 @@ class AddProductView: UIView {
             
             if textView == descriptionOne {
                 textHeightOne += 15
+                print(textHeightOne)
             } else if textView == descriptionTwo {
                 textHeightTwo += 15
             }
@@ -198,6 +199,7 @@ class AddProductView: UIView {
             
             if textView == descriptionOne {
                 textHeightOne -= deletedNewlineCount * 15
+                print(textHeightOne)
             } else if textView == descriptionTwo {
                 textHeightTwo -= deletedNewlineCount * 15
             }
@@ -209,6 +211,7 @@ class AddProductView: UIView {
             
             if textView == descriptionOne {
                 textHeightOne -= deletedNewlineCount * 15
+                print(textHeightOne)
             } else if textView == descriptionTwo {
                 textHeightTwo -= deletedNewlineCount * 15
             }
@@ -297,6 +300,7 @@ extension AddProductView: UICollectionViewDelegate, UICollectionViewDataSource, 
             let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
             textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
             textHeightOne = Int(newSize.height)
+            print(textHeightOne)
             updateConstraints()
         } else if textView == descriptionTwo {
             let fixedWidth = textView.frame.size.width
